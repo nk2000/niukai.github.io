@@ -254,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/刷体帖/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/LeetCode-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kai Niu">
@@ -273,7 +273,202 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/02/刷体帖/" itemprop="url">刷体帖</a></h1>
+                <a class="post-title-link" href="/2018/03/05/LeetCode-4/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T21:54:47+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/05/LeetCode-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/05/LeetCode-4/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: LeetCode_4<br>date: 2018-03-05 21:39:44<br>tags:</p>
+<ul>
+<li>Algorithm</li>
+<li>LeetCode<br>categories:</li>
+<li><h2 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h2>#4. Median of Two Sorted Arrays</li>
+</ul>
+<p>‘’’<br>public double findMedianSortedArrays(int[] nums1, int[] nums2) {<br>        int len1 = nums1.length;<br>        int len2 = nums2.length;</p>
+<pre><code>    // 分治~二分查找
+    int low = 0;
+    int high = len1;
+
+    while (true) {
+        // index1 代表 nums1 在左侧的个数，取值范围 [0，len1];
+        int index1 = low + (high - low) / 2;
+        int index2 = (len1 - index1 + len2) / 2;
+
+        // 对应的左边下边
+        int i = index1 - 1;
+        int j = index2 - 1;
+
+        // 边界情况
+        if (index1 == 0) {
+            if (nums2[index2 - 1] &lt;= nums1[index1]) {
+                if(index2 == len2) return (nums1[index1] + nums2[index2-1])/2.0;
+                return (nums2[index2 - 1] + Math.min(nums1[index1], nums2[index2])) / 2.0;
+            } else {
+                low = index1 + 1;
+            }
+        } else if (index2 == len2) {
+            if (nums2[index2 - 1] &lt;= nums1[index1]) {
+                if(index1 == 0) return (nums1[index1] + nums2[index2-1])/2.0;
+                return (Math.max(nums1[index1 - 1], nums2[index2 - 1]) + nums1[index1]) / 2.0;
+            } else {
+                // index1 取小了
+                low = index1 + 1;
+            }
+        } else if (index2 == 0) {
+            if (nums1[index1 - 1] &lt;= nums2[index2]) {
+                if (index1 == len1)
+                    return (nums1[index1 - 1] + nums2[index2]) / 2.0;
+                return (nums1[index1 - 1] + Math.min(nums1[index1], nums2[index2])) / 2.0;
+            } else {
+                high = index1;
+            }
+        } else if (index1 == len1) {
+            if (nums1[index1 - 1] &lt;= nums2[index2]) {
+                if (index2 == 0)
+                    return (nums1[index1 - 1] + nums2[index2]) / 2.0;
+                return (Math.max(nums1[index1 - 1], nums2[index2 - 1]) + nums2[index2]) / 2.0;
+            } else {
+                high = index1;
+            }
+        }
+
+        else if (nums1[index1 - 1] &lt;= nums2[index2] &amp;&amp; nums2[index2 - 1] &lt;= nums1[index1]) {
+            return (Math.max(nums1[index1 - 1], nums2[index2 - 1]) + Math.min(nums1[index1], nums2[index2])) / 2.0;
+        } else if (nums1[index1 - 1] &gt; nums2[index2] || nums2[index2 - 1] &gt; nums1[index1]) {
+            high = index1;
+        } else {
+            low = index1;
+        }
+    }
+
+}
+</code></pre><p>‘’’</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/刷题贴/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/02/刷题贴/" itemprop="url">刷体帖</a></h1>
         
 
         <div class="post-meta">
@@ -304,8 +499,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/02/刷体帖/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/刷体帖/" itemprop="commentCount"></span>
+                <a href="/2018/03/02/刷题贴/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/刷题贴/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -558,7 +753,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
