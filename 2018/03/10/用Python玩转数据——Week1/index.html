@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="运行方式 Shell方式 文件方式   IO 输入  var = input(); 输出  print语句   代码风格 注释 续行 续行符 括号内的内容 三引号   缩进——语句块    基础语法 变量： 标识对象，引用对象 标识符： 合法的变量名称 标识符 运算符 算术运算符 位运算符 比较运算符 逻辑运算符   表达式：用运算符连接各种类型数据的式子 赋值：给变量类型和“值” 增量赋值">
+<meta name="description" content="第一个Python程序 运行方式 Shell方式 文件方式 模块是对象，并且所有的模块都有一个内置属性 name。一个模块的 name 的值取决于您如何应用模块。如果 import 一个模块，那么模块name 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, name 的值将是一个特别缺省”main“。     IO 输入  var = i">
 <meta name="keywords" content="Python,Coursera">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Python玩转数据——Week1">
 <meta property="og:url" content="http://yoursite.com/2018/03/10/用Python玩转数据——Week1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="运行方式 Shell方式 文件方式   IO 输入  var = input(); 输出  print语句   代码风格 注释 续行 续行符 括号内的内容 三引号   缩进——语句块    基础语法 变量： 标识对象，引用对象 标识符： 合法的变量名称 标识符 运算符 算术运算符 位运算符 比较运算符 逻辑运算符   表达式：用运算符连接各种类型数据的式子 赋值：给变量类型和“值” 增量赋值">
+<meta property="og:description" content="第一个Python程序 运行方式 Shell方式 文件方式 模块是对象，并且所有的模块都有一个内置属性 name。一个模块的 name 的值取决于您如何应用模块。如果 import 一个模块，那么模块name 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, name 的值将是一个特别缺省”main“。     IO 输入  var = i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-10T13:44:44.408Z">
+<meta property="og:updated_time" content="2018-03-13T11:04:24.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Python玩转数据——Week1">
-<meta name="twitter:description" content="运行方式 Shell方式 文件方式   IO 输入  var = input(); 输出  print语句   代码风格 注释 续行 续行符 括号内的内容 三引号   缩进——语句块    基础语法 变量： 标识对象，引用对象 标识符： 合法的变量名称 标识符 运算符 算术运算符 位运算符 比较运算符 逻辑运算符   表达式：用运算符连接各种类型数据的式子 赋值：给变量类型和“值” 增量赋值">
+<meta name="twitter:description" content="第一个Python程序 运行方式 Shell方式 文件方式 模块是对象，并且所有的模块都有一个内置属性 name。一个模块的 name 的值取决于您如何应用模块。如果 import 一个模块，那么模块name 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, name 的值将是一个特别缺省”main“。     IO 输入  var = i">
 
 
 
@@ -354,34 +354,44 @@
       
 
       
-        <ul>
+        <h2 id="第一个Python程序"><a href="#第一个Python程序" class="headerlink" title="第一个Python程序"></a>第一个Python程序</h2><ul>
 <li>运行方式<ul>
 <li>Shell方式</li>
-<li>文件方式</li>
+<li>文件方式<blockquote>
+<p>模块是对象，并且所有的模块都有一个内置属性 <strong>name</strong>。一个模块的 <strong>name</strong> 的值取决于您如何应用模块。如果 import 一个模块，那么模块<strong>name</strong> 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, <strong>name</strong> 的值将是一个特别缺省”<strong>main</strong>“。</p>
+</blockquote>
+</li>
 </ul>
 </li>
 <li>IO<ul>
-<li>输入<br>  var = input();</li>
+<li>输入<br>  var = input();<br>  Python 3.x中raw_input() 和input()整合成了input()， 返回类型为str</li>
 <li>输出<br>  print语句</li>
 </ul>
 </li>
-<li>代码风格<ul>
-<li>注释</li>
-<li>续行<ul>
+<li><p>代码风格</p>
+<ul>
+<li>注释 # comment</li>
+<li><p>续行</p>
+<ul>
 <li>续行符</li>
 <li>括号内的内容</li>
-<li>三引号</li>
+<li>三引号<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;print(<span class="string">'''hello </span></span><br><span class="line"><span class="string">world'''</span>)</span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="string">'''hello</span></span><br><span class="line"><span class="string"><span class="meta">... </span>work'''</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == <span class="string">'hello work'</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = <span class="string">'hello work'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = <span class="string">'hello \</span></span><br><span class="line"><span class="string">... work'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y == z</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li>缩进——语句块</li>
+<li><p>缩进——语句块</p>
+</li>
 </ul>
 </li>
 </ul>
 <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
 <li>变量： 标识对象，引用对象</li>
 <li>标识符： 合法的变量名称</li>
-<li>标识符</li>
-<li>运算符<ul>
+<li><p>关键字</p>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Python中的对象包含三要素：id、type、value</span><br><span class="line">其中id用来唯一标识一个对象，type标识对象的类型，value是对象的值</span><br><span class="line"></span><br><span class="line">is判断的是a对象是否就是b对象，是通过id来判断的</span><br><span class="line">==判断的是a对象的值是否和b对象的值相等，是通过value来判断的</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; a=<span class="number">100</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b=<span class="number">100.0</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; a is b</span><br><span class="line">False</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; a==b</span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; id(a)</span><br><span class="line"><span class="number">30696848</span>L</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; id(b)</span><br><span class="line"><span class="number">48685000</span>L</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; id(a)==id(b)</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运算符</p>
+<ul>
 <li>算术运算符</li>
 <li>位运算符</li>
 <li>比较运算符</li>
@@ -389,11 +399,155 @@
 </ul>
 </li>
 <li>表达式：用运算符连接各种类型数据的式子</li>
-<li>赋值：给变量类型和“值”<ul>
-<li>增量赋值<br>  m %= 5</li>
+<li><p>赋值：给变量类型和“值”</p>
+<ul>
+<li>增量赋值<br>  m %= 5<br>  没有 m++ 这样的语句</li>
 <li>多重赋值<br>  PI = pi = 3.14159</li>
-<li>多元赋值<br>  x, y = y, x<br>  等式俩边是元祖</li>
+<li><p>多元赋值</p>
+<blockquote>
+<p> x, y = y, x<br> 等式俩边是元祖</p>
+</blockquote>
+<blockquote>
+<p> 多重赋值PI, r = 3.14159, 3的本质由两个步骤构成：<br>  temp = 3.14159, 3 # 元组打包（Tuple packing）<br>  PI, r = temp # 序列解包（Sequence unpacking），多重赋值有时也称为序列解包<code></code></p>
+</blockquote>
+</li>
 </ul>
+</li>
+<li>语句：完整执行一个任务的一行逻辑代码<ul>
+<li>语句包含表达式</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+<p>必须有明确的数据类型，程序才能分配给常量、变量精确 的存储大小，才能进行精确或高效率的运算</p>
+</blockquote>
+<ul>
+<li><p>Python标准数据类型</p>
+<ul>
+<li><p>（长）整型</p>
+<blockquote>
+<p>Python 3.x中没 有long类型， 整数都是int型<br>存储大小跟内存有关，不会发生溢出问题</p>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; x = <span class="number">100000000000000000000000000000</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x **=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x</span><br><span class="line"><span class="number">10000000000000000000000000000000000000000000000000000000000</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x **=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x</span><br><span class="line"><span class="number">100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>浮点型</p>
+<blockquote>
+<p>没有double</p>
+</blockquote>
+</li>
+<li>复数型</li>
+<li>布尔型</li>
+<li>序列类型<ul>
+<li>字符串: 不可变</li>
+<li>列表：可变</li>
+<li>元组：不可变</li>
+</ul>
+</li>
+<li>映射类型<ul>
+<li>字典</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h2><ul>
+<li>算术运算符<blockquote>
+<p>乘方 <em>**  正负号+ -<br>乘除 </em> /  整除//<br>取余%    加减+ -</p>
+</blockquote>
+</li>
+<li>比较运算<blockquote>
+<p>3 &lt; 4 &lt; 7 # same as ( 3 &lt; 4 ) and ( 4 &lt; 7 )<br>True<br>4 &gt; 3 == 3 # same as ( 4 &gt; 3 ) and ( 3 == 3 )<br>True<br>4 &lt; 3 &lt; 5 != 2 &lt; 7<br>False</p>
+</blockquote>
+</li>
+<li>逻辑运算</li>
+<li>字符运算符<ul>
+<li>原始字符串操作符 (r / R)</li>
+<li>Unicode 字符串操作符( u / U )</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数、模块和包"><a href="#函数、模块和包" class="headerlink" title="函数、模块和包"></a>函数、模块和包</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li><p>内建函数</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">绝对值函数abs(x)</span><br><span class="line">类型函数type(x)</span><br><span class="line">四舍五入函数round(x)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">3.4</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">4.6</span>)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">3.5</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">2.5</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line">四舍六入五成双</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非内建函数: 非内建函数的使用需要靠模块引入</p>
+</li>
+</ul>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>一个完整的Python文件即是一个模块</p>
+<ul>
+<li>文件:物理上的组织方式 math.py</li>
+<li>模块:逻辑上的组织方式 math</li>
+</ul>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ul>
+<li>一个有层次的文件目录结构</li>
+<li>定义了一个由模块和子包组成 的 Python 应用程序执行环境</li>
+</ul>
+<h3 id="库"><a href="#库" class="headerlink" title="库"></a>库</h3><ul>
+<li>库是一组具有相关功 能的模块的集合</li>
+</ul>
+<h2 id="RANGE和-XRANGE"><a href="#RANGE和-XRANGE" class="headerlink" title="RANGE和 XRANGE"></a>RANGE和 XRANGE</h2><ul>
+<li>range():Python3返回的是一个range对象，需要用list(range())方式进行调用<blockquote>
+<p>range (start, end, step=1)<br>range (start, end)<br>range (end)</p>
+</blockquote>
+</li>
+<li>xrange<br>  Python3 不支持xrange()</li>
+</ul>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ul>
+<li><p>while</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">expression</span>: </span><br><span class="line">    suite_to_repeat</span><br><span class="line"></span><br><span class="line">• 条件表达式</span><br><span class="line">• 当 <span class="keyword">expression</span> 值 为 True</span><br><span class="line">时执行suite_to_repeat代码块</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> iter<span class="number">_</span>var <span class="keyword">in</span> iterable<span class="number">_</span><span class="keyword">object</span>: </span><br><span class="line">    suite<span class="number">_</span>to<span class="number">_</span>repeat</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>可以明确循环的次数</p>
+<ul>
+<li>遍历一个数据集内的成员 </li>
+<li>在列表解析中使用</li>
+<li>生成器表达式中使用</li>
+</ul>
+</li>
+<li><p>iterable_object</p>
+<ul>
+<li>String</li>
+<li>List</li>
+<li>Tuple</li>
+<li>Dictionary </li>
+<li>File</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>循环中的else语句<ul>
+<li>如果循环代码从break处终止，跳出循环</li>
+<li>正常结束循环，则执行else中代码</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h2><h3 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h3><h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addMe2Me</span><span class="params">(x)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="string">'apply operation + to argument'</span> <span class="comment">#DocString，用来说明文本</span></span><br><span class="line">    <span class="keyword">return</span> (x+x)</span><br></pre></td></tr></table></figure>
+<p>print(fn._doc)：查看函数文档</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>默认参数<blockquote>
+<p>默认参数一般需要放置在参数列表的最后</p>
+</blockquote>
+</li>
+<li>关键字参数<blockquote>
+<p>关键字参数是让调用 者通过使用参数名区 分参数。允许改变参 数列表中的参数顺序</p>
+</blockquote>
+</li>
+<li>传递函数<blockquote>
+<p>函数可以像参数一样传递给另外一个函数</p>
+</blockquote>
+</li>
+<li>lamda函数<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lambda     <span class="keyword">x</span>, y  :  <span class="keyword">x</span> + y</span><br><span class="line"></span><br><span class="line">my_add = lambda <span class="keyword">x</span>, y :  <span class="keyword">x</span> + y</span><br><span class="line">&gt;&gt;&gt; my_add(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><ul>
+<li>全局变量</li>
+<li><p>局部变量</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Filename: scopeofvar.py</span></span><br><span class="line">def f(x): </span><br><span class="line">    print <span class="keyword">a</span></span><br><span class="line">    <span class="keyword">a</span> =<span class="number">5</span> </span><br><span class="line">    print <span class="keyword">a</span> + x</span><br><span class="line"></span><br><span class="line"><span class="keyword">a</span>= <span class="number">3</span> </span><br><span class="line">f(<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line">UnboundLocalError: <span class="built_in">local</span> <span class="built_in">variable</span> <span class="string">'a'</span> referenced <span class="keyword">before</span> assignment</span><br><span class="line"><span class="comment"># 在这里 a 为全局变量</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>global语句</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">global</span>语句强调全局变量</span><br><span class="line"></span><br><span class="line"><span class="comment"># Filename: scopeofvar.py</span></span><br><span class="line">def f(x): </span><br><span class="line">    <span class="built_in">global</span> <span class="keyword">a</span></span><br><span class="line">    print <span class="keyword">a</span> </span><br><span class="line">    <span class="keyword">a</span>= <span class="number">5</span> </span><br><span class="line">    print <span class="keyword">a</span> + x</span><br><span class="line"></span><br><span class="line"><span class="keyword">a</span>= <span class="number">3</span> </span><br><span class="line">f(<span class="number">8</span>) </span><br><span class="line">print <span class="keyword">a</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">Output: <span class="number">3</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -437,6 +591,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/12/week3/" rel="prev" title="week3">
+                week3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -520,7 +678,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -585,7 +743,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础语法"><span class="nav-number">1.</span> <span class="nav-text">基础语法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个Python程序"><span class="nav-number">1.</span> <span class="nav-text">第一个Python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础语法"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本运算"><span class="nav-number">4.</span> <span class="nav-text">基本运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数、模块和包"><span class="nav-number">5.</span> <span class="nav-text">函数、模块和包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">5.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">5.2.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包"><span class="nav-number">5.3.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#库"><span class="nav-number">5.4.</span> <span class="nav-text">库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RANGE和-XRANGE"><span class="nav-number">6.</span> <span class="nav-text">RANGE和 XRANGE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环"><span class="nav-number">7.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数-1"><span class="nav-number">8.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内建函数"><span class="nav-number">8.1.</span> <span class="nav-text">内建函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义函数"><span class="nav-number">8.2.</span> <span class="nav-text">自定义函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">8.3.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量作用域"><span class="nav-number">9.</span> <span class="nav-text">变量作用域</span></a></li></ol></div>
             
 
           </div>
