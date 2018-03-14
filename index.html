@@ -254,6 +254,335 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/用Python玩转数据——week2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/13/用Python玩转数据——week2/" itemprop="url">用Python玩转数据——week2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T21:10:33+08:00">
+                2018-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/用Python玩转数据/" itemprop="url" rel="index">
+                    <span itemprop="name">用Python玩转数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/13/用Python玩转数据——week2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/13/用Python玩转数据——week2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="本地数据获取"><a href="#本地数据获取" class="headerlink" title="本地数据获取"></a>本地数据获取</h2><h3 id="文文件的打开，读写和关闭件"><a href="#文文件的打开，读写和关闭件" class="headerlink" title="文文件的打开，读写和关闭件"></a>文文件的打开，读写和关闭件</h3><ul>
+<li>打开后才能进行读写</li>
+<li>为什么需要关闭?<blockquote>
+<p>因为Python可能会缓存写入的数据 如果程序异常崩溃了 数据就不能写入到文件中 所以为了安全起见 文件用完以后要养成 主动关闭文件的习</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="文件的打开"><a href="#文件的打开" class="headerlink" title="文件的打开"></a>文件的打开</h3><ul>
+<li><p>格式</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_obj = open(filename, <span class="attribute">mode</span>=<span class="string">'r'</span>, <span class="attribute">buffering</span>=-1)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mode为可选参数，默认值为r</p>
+</li>
+<li>buffering也为可选参数，默认值为-1(0代表不缓冲，1或大于1的值表示缓冲一行或指定缓冲区大小)<ul>
+<li>在Python中 二进制文件可以不使用缓冲 </li>
+<li>文本文件必须要使用缓冲</li>
+</ul>
+</li>
+<li>open()函数-mode<br><img src="/images/Python-NJU-wekk2-1.png" alt=""></li>
+<li>返回值<ul>
+<li>open()函数返回一个文件(file)对象</li>
+<li>文件对象可迭代</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件相关函数"><a href="#文件相关函数" class="headerlink" title="文件相关函数"></a>文件相关函数</h3><ul>
+<li><p>f.write(str)</p>
+  <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = <span class="built_in">open</span>(<span class="string">'firstpro.txt'</span>, <span class="string">'w'</span>) </span><br><span class="line">&gt;&gt;&gt; f.<span class="built_in">write</span>(<span class="string">'Hello, World!'</span>) </span><br><span class="line">&gt;&gt;&gt; f.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(‘firstpro.txt’, ‘w’) <span class="keyword">as</span> f:</span><br><span class="line">	      f.<span class="built_in">write</span>() <span class="comment">#能进行文件异常处理，更加简洁有效</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>f.read()</p>
+<ul>
+<li>file_obj.read(size)<ul>
+<li>从文件中至多读出size字节数据，返回一个字符串</li>
+</ul>
+</li>
+<li>file_obj.read()<ul>
+<li>读文件直到文件结束，返回一个字符串</li>
+</ul>
+</li>
+<li>注意文件指针的概念，可以用f.tell() 查看</li>
+</ul>
+</li>
+<li><p>f.readlines()</p>
+<ul>
+<li>readlines返回一个列表 Python中不删除换行符，需要程序员自己完成<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">r'companies.txt'</span>) </span><br><span class="line">cNames = f.readlines() </span><br><span class="line"><span class="keyword">print</span> cNames</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">[<span class="string">'GOOGLE Inc.\n'</span>, <span class="string">'Microsoft Corporation\n'</span>, <span class="string">'Apple Inc.\n'</span>, <span class="string">'Facebook, Inc.'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>f.seek(offset , whence=0)<br>  − 在文件中移动文件指针，从 whence(0表示文件头部，1表示 当前位置，2表示文件尾部)偏 移offset个字节<br>  – whence参数可选，默认值为0</p>
+</li>
+</ul>
+<h2 id="网络数据获取"><a href="#网络数据获取" class="headerlink" title="网络数据获取"></a>网络数据获取</h2><h3 id="获取过程"><a href="#获取过程" class="headerlink" title="获取过程"></a>获取过程</h3><ul>
+<li>抓取<ul>
+<li>urllib内建模块<ul>
+<li>urllib.request : 已经逐渐被Request第三方库替代</li>
+</ul>
+</li>
+<li>Requests第三方库：适合中小型网络爬虫的开发</li>
+<li>Scrapy框架：大型 </li>
+</ul>
+</li>
+<li>解析<ul>
+<li>BeautifulSoup库 : <a href="https://www.crummy.com/softwa" target="_blank" rel="noopener">https://www.crummy.com/softwa</a> re/BeautifulSoup/bs4/doc/</li>
+<li>re模块 : <a href="https://docs.python.org/3.5/libr" target="_blank" rel="noopener">https://docs.python.org/3.5/libr</a> ary/re.html</li>
+</ul>
+</li>
+</ul>
+<h3 id="Requests库"><a href="#Requests库" class="headerlink" title="Requests库"></a>Requests库</h3><ul>
+<li><p>Requests官网:<a href="http://www.python-requests.org/" target="_blank" rel="noopener">http://www.python-requests.org/</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import requests</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; r = requests.get(<span class="string">'https://book.douban.com/subject/1084336/comments/'</span>) </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> get方法返回一个Response对象，这个对象里面包含Request请求信息 和服务器的Response响应信息 而Requests会自动解码 来自服务器的信息 假设某个网页的格式是json格式 那我们就可以利用Requests库中 内置的json解码器来解码 类似于这样的方式 : </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> re.json()</span></span><br><span class="line">'</span><br><span class="line"></span><br><span class="line">'</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; r.status_code</span></span><br><span class="line">200 #代表一切正常</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(r.text)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>解码<ul>
+<li>json格式<blockquote>
+<p>re.json()</p>
+</blockquote>
+</li>
+<li>二进制格式<blockquote>
+<p>re.content()</p>
+</blockquote>
+</li>
+<li>re.text<blockquote>
+<p>自动推测文本编码，并进行解码</p>
+</blockquote>
+</li>
+<li>re.encoding = ‘utf-8’<blockquote>
+<p>修改编码</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>遵循网站爬虫协议 robots.txt<ul>
+<li>例如 <a href="http://www.douban.com/robots.txt" target="_blank" rel="noopener">www.douban.com/robots.txt</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h3><ul>
+<li>常用解析器<ul>
+<li>LXML</li>
+</ul>
+</li>
+<li>BeautifulSoup对象<ul>
+<li>Tag : HTML,XML中的标签，大多数BeautifulSou对象都是Tag<ul>
+<li>属性<ul>
+<li>name</li>
+<li>attrs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NavigableString </li>
+<li>BeautifulSoup</li>
+<li>Comment : NavigableString的子类</li>
+</ul>
+</li>
+<li>例子<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">markup = <span class="string">'&lt;p class="title"&gt;&lt;b&gt;The little Prince&lt;/b&gt;&lt;/p&gt;'</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(markup, <span class="string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(soup.text)</span><br><span class="line">The little Prince</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>(soup.<span class="keyword">b</span>)</span><br><span class="line">Out[<span class="number">5</span>]: bs4.element.Tag</span><br><span class="line"></span><br><span class="line">soup.<span class="keyword">b</span></span><br><span class="line">Out[<span class="number">6</span>]: <span class="symbol">&lt;b&gt;</span>The little Prince&lt;/<span class="keyword">b</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">tag</span> = soup.<span class="keyword">p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">tag</span>.name</span><br><span class="line">Out[<span class="number">8</span>]: <span class="string">'p'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">tag</span>.attrs</span><br><span class="line">Out[<span class="number">9</span>]: &#123;<span class="string">'class'</span>: [<span class="string">'title'</span>]&#125;</span><br><span class="line"></span><br><span class="line">#Tag属性的操作 和我们后面要讲的字典一样的 所以可以通过这样的方式来获取属性 </span><br><span class="line"><span class="keyword">tag</span>[<span class="string">'class'</span>]</span><br><span class="line">Out[<span class="number">10</span>]: [<span class="string">'title'</span>]</span><br><span class="line"></span><br><span class="line"># NavigableString对象可以用<span class="built_in">string</span>属性来表示 </span><br><span class="line"><span class="keyword">tag</span>.<span class="built_in">string</span></span><br><span class="line">Out[<span class="number">11</span>]: <span class="string">'The little Prince'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>(<span class="keyword">tag</span>.<span class="built_in">string</span>)</span><br><span class="line">Out[<span class="number">12</span>]: bs4.element.NavigableString # 后期很常用</span><br><span class="line"></span><br><span class="line">soup.find_all(<span class="string">'b'</span>) # 参数可以是标签或者属性名, 只需要找第一个可以用<span class="keyword">find</span>方法</span><br><span class="line">Out[<span class="number">13</span>]: [<span class="symbol">&lt;b&gt;</span>The little Prince&lt;/<span class="keyword">b</span>&gt;]</span><br><span class="line"></span><br><span class="line">#find_all 方法返回一个列表</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><ul>
+<li>在线测试/调试工具<ul>
+<li><a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h2><h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><ul>
+<li>成员<ul>
+<li>字符串</li>
+<li>元祖</li>
+<li>列表</li>
+</ul>
+</li>
+<li>访问模式<ul>
+<li>元素从0开始通过下标偏移量访问</li>
+<li>一次可访问一个或多个元素</li>
+</ul>
+</li>
+<li><p>操作</p>
+<ul>
+<li><p>标准类型运算符</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> 值比较: &lt; &gt; &lt;= &gt;= == !=</span><br><span class="line">布尔运算: <span class="keyword">not</span> <span class="keyword">and</span> <span class="keyword">or</span></span><br><span class="line">对象身份比较: <span class="keyword">is</span> <span class="keyword">is</span> <span class="keyword">not</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>序列类型运算符</p>
+<blockquote>
+<p>获取，重复，连接，判断</p>
+</blockquote>
+</li>
+<li>内减函数运算符<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> 序列类型转换内建函数: list() str() tuple()</span><br><span class="line">&gt;&gt;&gt; list(<span class="string">'Hello, World!'</span>)</span><br><span class="line">[<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">','</span>, <span class="string">' '</span>, <span class="string">'W'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'l'</span>, <span class="string">'d'</span>, <span class="string">'!'</span>] </span><br><span class="line">&gt;&gt;&gt; tuple(<span class="string">"Hello, World!"</span>)</span><br><span class="line">(<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">','</span>, <span class="string">' '</span>, <span class="string">'W'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'l'</span>, <span class="string">'d'</span>, <span class="string">'!'</span>)</span><br><span class="line"></span><br><span class="line">序列类型可用内建函数</span><br><span class="line"><span class="function"><span class="title">enumerate</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">reversed</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">len</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">sorted</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">max</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">sum</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">min</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">zip</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>输出形式<ul>
+<li>format_string % (arguments_to_convert)</li>
+<li>format_string.format(arguments_to_convert)<br><img src="/images/Python-NJU-wekk2-2.png" alt=""><br><img src="/images/Python-NJU-wekk2-3.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
+<li>可扩展的容器对象</li>
+<li>包含不同类型对象</li>
+<li>列表方法<ul>
+<li>append()</li>
+<li>copy()</li>
+<li>count()</li>
+<li>extend()</li>
+<li>index()</li>
+<li>insert()</li>
+<li>pop()</li>
+<li>remove()</li>
+<li>reverse()</li>
+<li>sort()</li>
+</ul>
+</li>
+<li>列表解析  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [x for x in range(<span class="number">10</span>)]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">&gt;&gt;&gt; [x ** <span class="number">2</span> for x in range(<span class="number">10</span>)]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br><span class="line">&gt;&gt;&gt; [x ** <span class="number">2</span> for x in range(<span class="number">10</span>) if x ** <span class="number">2</span> &lt; <span class="number">50</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>]</span><br><span class="line">&gt;&gt;&gt; [(x+<span class="number">1</span>, y+<span class="number">1</span>) for x in range(<span class="number">2</span>) for y in range(<span class="number">2</span>)] </span><br><span class="line">[(<span class="number">1</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>,</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/week3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -296,6 +625,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计划/" itemprop="url" rel="index">
+                    <span itemprop="name">计划</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -335,7 +686,13 @@
       
         
           
-            
+            <h2 id="周一"><a href="#周一" class="headerlink" title="周一"></a>周一</h2><ul>
+<li>邹博算法课——字符串</li>
+<li>用Python玩转数据整理<h2 id="周二"><a href="#周二" class="headerlink" title="周二"></a>周二</h2></li>
+<li>用Python玩转数据 作业</li>
+<li>LeetCode</li>
+</ul>
+
           
         
       
@@ -1983,269 +2340,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/秋招备战/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai Niu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/picture.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/06/秋招备战/" itemprop="url">秋招备战</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T18:35:25+08:00">
-                2018-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计划/" itemprop="url" rel="index">
-                    <span itemprop="name">计划</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/06/秋招备战/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/06/秋招备战/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
-<li>机器学习<ul>
-<li>Q-learning</li>
-<li>朴素贝叶斯</li>
-<li>高斯混合模型</li>
-<li>隐 Markov 模型</li>
-<li>测度论<ul>
-<li>混淆矩阵</li>
-<li>ROC 曲线</li>
-<li>p值</li>
-</ul>
-</li>
-<li>SVM<ul>
-<li>凸优化</li>
-<li>梯度下降</li>
-<li>二次规划</li>
-<li>拉格朗日</li>
-<li>偏微分方程</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>深度学习<ul>
-<li>深度置信网或者层叠降噪自动编码机 / Deep Belief Nets or Stacked Denoising Autoencoders</li>
-<li>卷积神经网络（CNN）</li>
-<li>长短记忆（LSTM）时间递归神经网络</li>
-<li>结构递归神经网络（通常用于自然语言处理）</li>
-<li>word2vec 神经网络以及相关通过上下文学习词语的相关算法</li>
-<li>单指令流多数据流（SIMD）向量计算（比如说GPU)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>概率统计</p>
-</li>
-<li><p>算法</p>
-<ul>
-<li>邹博算法课</li>
-<li>Stanford Algorithm Specialist</li>
-<li>LeetCode</li>
-</ul>
-</li>
-<li>数据库<ul>
-<li>分布式数据库</li>
-</ul>
-</li>
-<li>Linux：在服务器上部署，处理数据<ul>
-<li>《Unix入门经典》</li>
-<li>cat 、grep 、find 、awk 、sed 、sort 、cut 、tr</li>
-</ul>
-</li>
-<li>编程语言<ul>
-<li>Python<ul>
-<li>Coursera 《用Python玩转数据》</li>
-</ul>
-</li>
-<li>Java</li>
-</ul>
-</li>
-</ul>
-<h3 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h3><ul>
-<li>前三个月<ul>
-<li>LeetCode ，算法题200道题</li>
-<li>完成deeplearning.ai</li>
-<li>完成《用Python玩转数据》</li>
-<li>看完邹傅算法课</li>
-<li>完成3门Stanford 算法课</li>
-<li>完成李宏毅的深度学习课程</li>
-</ul>
-</li>
-<li>后三个月<ul>
-<li>LeetCode，算法题250道题</li>
-<li>实战<ul>
-<li>《集体智慧编程》</li>
-</ul>
-</li>
-<li>面经</li>
-<li>实验室实习</li>
-</ul>
-</li>
-</ul>
-<h3 id="执行情况"><a href="#执行情况" class="headerlink" title="执行情况"></a>执行情况</h3><ul>
-<li>第一个月<ul>
-<li>第一周<ul>
-<li>搭建hexo</li>
-<li>设置搬瓦工</li>
-<li>LeetCode 分治算法题（9）</li>
-</ul>
-</li>
-<li>第二周<ul>
-<li>算法<ul>
-<li>链表 &amp; 栈</li>
-<li>LeetCode：16</li>
-</ul>
-</li>
-<li>MLDS<ul>
-<li>俩次课</li>
-</ul>
-</li>
-<li>Python<ul>
-<li>俩次课 </li>
-</ul>
-</li>
-<li>博客<ul>
-<li>三篇题解</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2300,7 +2394,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
