@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Algorithm,LeetCode," />
+  <meta name="keywords" content="KMP,Algorithm," />
 
 
 
@@ -81,18 +81,21 @@
 
 
 
-<meta name="description" content="代码思路 转化为查找第K个数 二分查找  点击显/隐代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061public double findMedianSortedArrays(int[] nums1, int[] nu">
-<meta name="keywords" content="Algorithm,LeetCode">
+<meta name="description" content="比较过程分析 比较次数 比较次数： 红色 + 蓝色蓝色部分是相比暴力求解，节省下的比较次数  周期从比较次数可以看出，呈现 1 1 1 1 5 这样的周期  一个周期内的比较次数：8 周期长度：5 周期个数：n/5 比较总次数： 周期个数 * 一个周期内额比较次数 = 1.8n   一般化结论：  一个周期内的比较次数：1 * (M - 1) + M 周期长度：M 周期个数：N/M 比较总次数：">
+<meta name="keywords" content="KMP,Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode4. Median of Two Sorted Arrays">
-<meta property="og:url" content="http://yoursite.com/2018/03/05/LeetCode-4/index.html">
+<meta property="og:title" content="KMP时间复杂度分析">
+<meta property="og:url" content="http://yoursite.com/2018/03/16/KMP时间复杂度分析/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="代码思路 转化为查找第K个数 二分查找  点击显/隐代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061public double findMedianSortedArrays(int[] nums1, int[] nu">
+<meta property="og:description" content="比较过程分析 比较次数 比较次数： 红色 + 蓝色蓝色部分是相比暴力求解，节省下的比较次数  周期从比较次数可以看出，呈现 1 1 1 1 5 这样的周期  一个周期内的比较次数：8 周期长度：5 周期个数：n/5 比较总次数： 周期个数 * 一个周期内额比较次数 = 1.8n   一般化结论：  一个周期内的比较次数：1 * (M - 1) + M 周期长度：M 周期个数：N/M 比较总次数：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T14:07:50.758Z">
+<meta property="og:image" content="http://yoursite.com/images/KMP-1.png">
+<meta property="og:image" content="http://yoursite.com/images/KMP-2.png">
+<meta property="og:updated_time" content="2018-03-16T03:46:20.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode4. Median of Two Sorted Arrays">
-<meta name="twitter:description" content="代码思路 转化为查找第K个数 二分查找  点击显/隐代码 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061public double findMedianSortedArrays(int[] nums1, int[] nu">
+<meta name="twitter:title" content="KMP时间复杂度分析">
+<meta name="twitter:description" content="比较过程分析 比较次数 比较次数： 红色 + 蓝色蓝色部分是相比暴力求解，节省下的比较次数  周期从比较次数可以看出，呈现 1 1 1 1 5 这样的周期  一个周期内的比较次数：8 周期长度：5 周期个数：n/5 比较总次数： 周期个数 * 一个周期内额比较次数 = 1.8n   一般化结论：  一个周期内的比较次数：1 * (M - 1) + M 周期长度：M 周期个数：N/M 比较总次数：">
+<meta name="twitter:image" content="http://yoursite.com/images/KMP-1.png">
 
 
 
@@ -122,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/05/LeetCode-4/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/16/KMP时间复杂度分析/"/>
 
 
 
 
 
-  <title>LeetCode4. Median of Two Sorted Arrays | Hexo</title>
+  <title>KMP时间复杂度分析 | Hexo</title>
   
 
 
@@ -255,7 +258,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/LeetCode-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/16/KMP时间复杂度分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kai Niu">
@@ -272,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode4. Median of Two Sorted Arrays</h1>
+          <h1 class="post-title" itemprop="name headline">KMP时间复杂度分析</h1>
         
 
         <div class="post-meta">
@@ -284,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T21:39:44+08:00">
-                2018-03-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T09:18:11+08:00">
+                2018-03-16
               </time>
             
 
@@ -307,8 +310,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
 
@@ -325,8 +328,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/05/LeetCode-4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/05/LeetCode-4/" itemprop="commentCount"></span>
+                <a href="/2018/03/16/KMP时间复杂度分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/16/KMP时间复杂度分析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -354,14 +357,52 @@
       
 
       
-        <h3 id="代码思路"><a href="#代码思路" class="headerlink" title="代码思路"></a>代码思路</h3><ul>
-<li>转化为查找第K个数</li>
-<li>二分查找</li>
+        <h2 id="比较过程分析"><a href="#比较过程分析" class="headerlink" title="比较过程分析"></a>比较过程分析</h2><p><img src="/images/KMP-1.png" alt=""></p>
+<h3 id="比较次数"><a href="#比较次数" class="headerlink" title="比较次数"></a>比较次数</h3><blockquote>
+<p>比较次数： 红色 + 蓝色<br>蓝色部分是相比暴力求解，节省下的比较次数</p>
+</blockquote>
+<h3 id="周期"><a href="#周期" class="headerlink" title="周期"></a>周期</h3><p>从比较次数可以看出，呈现 1 1 1 1 5 这样的周期</p>
+<ul>
+<li>一个周期内的比较次数：8</li>
+<li>周期长度：5</li>
+<li>周期个数：n/5</li>
+<li>比较总次数： 周期个数 * 一个周期内额比较次数 = 1.8n</li>
 </ul>
-<div><div class="fold_hider"><div class="close hider_title">点击显/隐代码</div></div><div class="fold">
-<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">public <span class="type">double</span> findMedianSortedArrays(<span class="type">int</span>[] nums1, <span class="type">int</span>[] nums2) &#123;</span><br><span class="line">		<span class="type">int</span> len1 = nums1.<span class="built_in">length</span>;</span><br><span class="line">		<span class="type">int</span> len2 = nums2.<span class="built_in">length</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 分治~二分查找</span></span><br><span class="line">		<span class="type">int</span> low = <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> high = len1;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">			<span class="comment">// index1 代表 nums1 在左侧的个数，取值范围 [0，len1];</span></span><br><span class="line">			<span class="type">int</span> index1 = low + (high - low) / <span class="number">2</span>;</span><br><span class="line">			<span class="type">int</span> index2 = (len1 - index1 + len2) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 对应的左边下边</span></span><br><span class="line">			<span class="type">int</span> i = index1 - <span class="number">1</span>;</span><br><span class="line">			<span class="type">int</span> j = index2 - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 边界情况</span></span><br><span class="line">			<span class="keyword">if</span> (index1 == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span> (nums2[index2 - <span class="number">1</span>] &lt;= nums1[index1]) &#123;</span><br><span class="line">					<span class="keyword">if</span>(index2 == len2) <span class="keyword">return</span> (nums1[index1] + nums2[index2<span class="number">-1</span>])/<span class="number">2.0</span>;</span><br><span class="line">					<span class="keyword">return</span> (nums2[index2 - <span class="number">1</span>] + Math.<span class="built_in">min</span>(nums1[index1], nums2[index2])) / <span class="number">2.0</span>;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					low = index1 + <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (index2 == len2) &#123;</span><br><span class="line">				<span class="keyword">if</span> (nums2[index2 - <span class="number">1</span>] &lt;= nums1[index1]) &#123;</span><br><span class="line">					<span class="keyword">if</span>(index1 == <span class="number">0</span>) <span class="keyword">return</span> (nums1[index1] + nums2[index2<span class="number">-1</span>])/<span class="number">2.0</span>;</span><br><span class="line">					<span class="keyword">return</span> (Math.<span class="built_in">max</span>(nums1[index1 - <span class="number">1</span>], nums2[index2 - <span class="number">1</span>]) + nums1[index1]) / <span class="number">2.0</span>;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="comment">// index1 取小了</span></span><br><span class="line">					low = index1 + <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (index2 == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span> (nums1[index1 - <span class="number">1</span>] &lt;= nums2[index2]) &#123;</span><br><span class="line">					<span class="keyword">if</span> (index1 == len1)</span><br><span class="line">						<span class="keyword">return</span> (nums1[index1 - <span class="number">1</span>] + nums2[index2]) / <span class="number">2.0</span>;</span><br><span class="line">					<span class="keyword">return</span> (nums1[index1 - <span class="number">1</span>] + Math.<span class="built_in">min</span>(nums1[index1], nums2[index2])) / <span class="number">2.0</span>;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					high = index1;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (index1 == len1) &#123;</span><br><span class="line">				<span class="keyword">if</span> (nums1[index1 - <span class="number">1</span>] &lt;= nums2[index2]) &#123;</span><br><span class="line">					<span class="keyword">if</span> (index2 == <span class="number">0</span>)</span><br><span class="line">						<span class="keyword">return</span> (nums1[index1 - <span class="number">1</span>] + nums2[index2]) / <span class="number">2.0</span>;</span><br><span class="line">					<span class="keyword">return</span> (Math.<span class="built_in">max</span>(nums1[index1 - <span class="number">1</span>], nums2[index2 - <span class="number">1</span>]) + nums2[index2]) / <span class="number">2.0</span>;</span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					high = index1;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (nums1[index1 - <span class="number">1</span>] &lt;= nums2[index2] &amp;&amp; nums2[index2 - <span class="number">1</span>] &lt;= nums1[index1]) &#123;</span><br><span class="line">				<span class="keyword">return</span> (Math.<span class="built_in">max</span>(nums1[index1 - <span class="number">1</span>], nums2[index2 - <span class="number">1</span>]) + Math.<span class="built_in">min</span>(nums1[index1], nums2[index2])) / <span class="number">2.0</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[index1 - <span class="number">1</span>] &gt; nums2[index2] || nums2[index2 - <span class="number">1</span>] &gt; nums1[index1]) &#123;</span><br><span class="line">				high = index1;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				low = index1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-</div></div>
+<blockquote>
+<p><strong>一般化结论：</strong></p>
+<ul>
+<li>一个周期内的比较次数：1 * (M - 1) + M</li>
+<li>周期长度：M</li>
+<li>周期个数：N/M</li>
+<li>比较总次数： 周期个数 * 一个周期内额比较次数 = (2 - 1/M)*N &lt; 2N</li>
+</ul>
+<p><strong>因此是线性</strong></p>
+</blockquote>
+<p>接下来证明，上述情况是KMP算法的最差情况</p>
+<h2 id="最差情况"><a href="#最差情况" class="headerlink" title="最差情况"></a>最差情况</h2><blockquote>
+<ol>
+<li>模式串<br>当模式串长度为M，首字符和其他字符全都相等(假定都为a)，模式串存在最长的k前缀和k后缀， next数组呈现递增样式:-1,0,1,2…</li>
+<li>需要匹配的字符串<ul>
+<li>串成周期性分布，周期为M</li>
+<li>前M-1都为a，第M位不等于a</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="模式串"><a href="#模式串" class="headerlink" title="模式串"></a>模式串</h3><p>模式串的最坏情况比较好理解，因为每次当s[i] 不等于 P[j]时，j = next[j]，一直按照next数组值进行回溯，当模式串全相等时，next数组呈现递增，每次回溯一个位子，因此比较次数是最多的</p>
+<h3 id="待匹配字符串"><a href="#待匹配字符串" class="headerlink" title="待匹配字符串"></a>待匹配字符串</h3><ol>
+<li>为什么呈现周期性的字符串满足<br>假设存在一个字符串，使得模式串匹配完，比较次数最多，那么以这个子串为基础形成的周期性字符串一定也是匹配次数最多的</li>
+<li>一个比较次数最多的子串，如何构造<br>假设不在M处失配，而是在k处就失配了，那么匹配次数为（k - 1）*1 + k,由上面的公式可以得到，当k = m时，比较次数是最多<br><img src="/images/KMP-2.png" alt=""><blockquote>
+<p>比较总次数：15 &lt; 18 </p>
+</blockquote>
+</li>
+</ol>
+<h2 id="最好情况"><a href="#最好情况" class="headerlink" title="最好情况"></a>最好情况</h2><blockquote>
+<ol>
+<li>模式串<br>当模式串的首字符和其他字符都不相等时，模式串不存在相等的k前缀和k后缀，next数组全为-1</li>
+<li>需要匹配的字符串<br>无要求</li>
+</ol>
+</blockquote>
 
       
     </div>
@@ -379,9 +420,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            <a href="/tags/KMP/" rel="tag"># KMP</a>
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       
@@ -394,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/25/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/03/15/用Python玩转数据-week3/" rel="next" title="用Python玩转数据-week3">
+                <i class="fa fa-chevron-left"></i> 用Python玩转数据-week3
               </a>
             
           </div>
@@ -403,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/06/秋招备战/" rel="prev" title="秋招备战">
-                秋招备战 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -555,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码思路"><span class="nav-number">1.</span> <span class="nav-text">代码思路</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#比较过程分析"><span class="nav-number">1.</span> <span class="nav-text">比较过程分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比较次数"><span class="nav-number">1.1.</span> <span class="nav-text">比较次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#周期"><span class="nav-number">1.2.</span> <span class="nav-text">周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最差情况"><span class="nav-number">2.</span> <span class="nav-text">最差情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模式串"><span class="nav-number">2.1.</span> <span class="nav-text">模式串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待匹配字符串"><span class="nav-number">2.2.</span> <span class="nav-text">待匹配字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最好情况"><span class="nav-number">3.</span> <span class="nav-text">最好情况</span></a></li></ol></div>
             
 
           </div>
