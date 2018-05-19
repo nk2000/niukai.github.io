@@ -1,0 +1,2730 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Hello World!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hello World!">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Hello World!">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+
+
+
+
+  <title>Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/用Python玩转数据-week3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/用Python玩转数据-week3/" itemprop="url">用Python玩转数据-week3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T20:57:46+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/15/用Python玩转数据-week3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/15/用Python玩转数据-week3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="ndarray"><a href="#ndarray" class="headerlink" title="ndarray"></a>ndarray</h2><h3 id="ndarray基本概念"><a href="#ndarray基本概念" class="headerlink" title="ndarray基本概念"></a>ndarray基本概念</h3><ul>
+<li>维度(dimensions)称为轴 (axes)，轴的个数称为秩(rank)</li>
+<li>基本属性<ul>
+<li>ndarray.ndim(秩)</li>
+<li>ndarray.shape(维度)</li>
+<li>ndarray.size(元素总个数)</li>
+<li>ndarray.dtype(元素类型)</li>
+<li>ndarray.itemsize(元素字节大小)<h3 id="ndarray的创建"><a href="#ndarray的创建" class="headerlink" title="ndarray的创建"></a>ndarray的创建</h3></li>
+</ul>
+</li>
+</ul>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
+<li>取DataFrame对象的列和行可获 得Series<ul>
+<li>frame[‘name’]</li>
+<li>frame.pay</li>
+</ul>
+</li>
+<li>DataFrame对象的修改和删除<ul>
+<li>frame[‘name’] = ‘admin’</li>
+<li>del frame[‘pay’]</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/用Python玩转数据——week2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/13/用Python玩转数据——week2/" itemprop="url">用Python玩转数据——week2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T21:10:33+08:00">
+                2018-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/用Python玩转数据/" itemprop="url" rel="index">
+                    <span itemprop="name">用Python玩转数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/13/用Python玩转数据——week2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/13/用Python玩转数据——week2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="本地数据获取"><a href="#本地数据获取" class="headerlink" title="本地数据获取"></a>本地数据获取</h2><h3 id="文文件的打开，读写和关闭件"><a href="#文文件的打开，读写和关闭件" class="headerlink" title="文文件的打开，读写和关闭件"></a>文文件的打开，读写和关闭件</h3><ul>
+<li>打开后才能进行读写</li>
+<li>为什么需要关闭?<blockquote>
+<p>因为Python可能会缓存写入的数据 如果程序异常崩溃了 数据就不能写入到文件中 所以为了安全起见 文件用完以后要养成 主动关闭文件的习</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="文件的打开"><a href="#文件的打开" class="headerlink" title="文件的打开"></a>文件的打开</h3><ul>
+<li><p>格式</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file_obj = open(filename, <span class="attribute">mode</span>=<span class="string">'r'</span>, <span class="attribute">buffering</span>=-1)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mode为可选参数，默认值为r</p>
+</li>
+<li>buffering也为可选参数，默认值为-1(0代表不缓冲，1或大于1的值表示缓冲一行或指定缓冲区大小)<ul>
+<li>在Python中 二进制文件可以不使用缓冲 </li>
+<li>文本文件必须要使用缓冲</li>
+</ul>
+</li>
+<li>open()函数-mode<br><img src="/images/Python-NJU-wekk2-1.png" alt=""></li>
+<li>返回值<ul>
+<li>open()函数返回一个文件(file)对象</li>
+<li>文件对象可迭代</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件相关函数"><a href="#文件相关函数" class="headerlink" title="文件相关函数"></a>文件相关函数</h3><ul>
+<li><p>f.write(str)</p>
+  <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = <span class="built_in">open</span>(<span class="string">'firstpro.txt'</span>, <span class="string">'w'</span>) </span><br><span class="line">&gt;&gt;&gt; f.<span class="built_in">write</span>(<span class="string">'Hello, World!'</span>) </span><br><span class="line">&gt;&gt;&gt; f.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(‘firstpro.txt’, ‘w’) <span class="keyword">as</span> f:</span><br><span class="line">	      f.<span class="built_in">write</span>() <span class="comment">#能进行文件异常处理，更加简洁有效</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>f.read()</p>
+<ul>
+<li>file_obj.read(size)<ul>
+<li>从文件中至多读出size字节数据，返回一个字符串</li>
+</ul>
+</li>
+<li>file_obj.read()<ul>
+<li>读文件直到文件结束，返回一个字符串</li>
+</ul>
+</li>
+<li>注意文件指针的概念，可以用f.tell() 查看</li>
+</ul>
+</li>
+<li><p>f.readlines()</p>
+<ul>
+<li>readlines返回一个列表 Python中不删除换行符，需要程序员自己完成<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">r'companies.txt'</span>) </span><br><span class="line">cNames = f.readlines() </span><br><span class="line"><span class="keyword">print</span> cNames</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">[<span class="string">'GOOGLE Inc.\n'</span>, <span class="string">'Microsoft Corporation\n'</span>, <span class="string">'Apple Inc.\n'</span>, <span class="string">'Facebook, Inc.'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>f.seek(offset , whence=0)<br>  − 在文件中移动文件指针，从 whence(0表示文件头部，1表示 当前位置，2表示文件尾部)偏 移offset个字节<br>  – whence参数可选，默认值为0</p>
+</li>
+</ul>
+<h2 id="网络数据获取"><a href="#网络数据获取" class="headerlink" title="网络数据获取"></a>网络数据获取</h2><h3 id="获取过程"><a href="#获取过程" class="headerlink" title="获取过程"></a>获取过程</h3><ul>
+<li>抓取<ul>
+<li>urllib内建模块<ul>
+<li>urllib.request : 已经逐渐被Request第三方库替代</li>
+</ul>
+</li>
+<li>Requests第三方库：适合中小型网络爬虫的开发</li>
+<li>Scrapy框架：大型 </li>
+</ul>
+</li>
+<li>解析<ul>
+<li>BeautifulSoup库 : <a href="https://www.crummy.com/softwa" target="_blank" rel="noopener">https://www.crummy.com/softwa</a> re/BeautifulSoup/bs4/doc/</li>
+<li>re模块 : <a href="https://docs.python.org/3.5/libr" target="_blank" rel="noopener">https://docs.python.org/3.5/libr</a> ary/re.html</li>
+</ul>
+</li>
+</ul>
+<h3 id="Requests库"><a href="#Requests库" class="headerlink" title="Requests库"></a>Requests库</h3><ul>
+<li><p>Requests官网:<a href="http://www.python-requests.org/" target="_blank" rel="noopener">http://www.python-requests.org/</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; import requests</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; r = requests.get(<span class="string">'https://book.douban.com/subject/1084336/comments/'</span>) </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> get方法返回一个Response对象，这个对象里面包含Request请求信息 和服务器的Response响应信息 而Requests会自动解码 来自服务器的信息 假设某个网页的格式是json格式 那我们就可以利用Requests库中 内置的json解码器来解码 类似于这样的方式 : </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> re.json()</span></span><br><span class="line">'</span><br><span class="line"></span><br><span class="line">'</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; r.status_code</span></span><br><span class="line">200 #代表一切正常</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt; <span class="built_in">print</span>(r.text)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>解码<ul>
+<li>json格式<blockquote>
+<p>re.json()</p>
+</blockquote>
+</li>
+<li>二进制格式<blockquote>
+<p>re.content()</p>
+</blockquote>
+</li>
+<li>re.text<blockquote>
+<p>自动推测文本编码，并进行解码</p>
+</blockquote>
+</li>
+<li>re.encoding = ‘utf-8’<blockquote>
+<p>修改编码</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>遵循网站爬虫协议 robots.txt<ul>
+<li>例如 <a href="http://www.douban.com/robots.txt" target="_blank" rel="noopener">www.douban.com/robots.txt</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h3><ul>
+<li>常用解析器<ul>
+<li>LXML</li>
+</ul>
+</li>
+<li>BeautifulSoup对象<ul>
+<li>Tag : HTML,XML中的标签，大多数BeautifulSou对象都是Tag<ul>
+<li>属性<ul>
+<li>name</li>
+<li>attrs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NavigableString </li>
+<li>BeautifulSoup</li>
+<li>Comment : NavigableString的子类</li>
+</ul>
+</li>
+<li>例子<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">markup = <span class="string">'&lt;p class="title"&gt;&lt;b&gt;The little Prince&lt;/b&gt;&lt;/p&gt;'</span></span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(markup, <span class="string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(soup.text)</span><br><span class="line">The little Prince</span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>(soup.<span class="keyword">b</span>)</span><br><span class="line">Out[<span class="number">5</span>]: bs4.element.Tag</span><br><span class="line"></span><br><span class="line">soup.<span class="keyword">b</span></span><br><span class="line">Out[<span class="number">6</span>]: <span class="symbol">&lt;b&gt;</span>The little Prince&lt;/<span class="keyword">b</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">tag</span> = soup.<span class="keyword">p</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">tag</span>.name</span><br><span class="line">Out[<span class="number">8</span>]: <span class="string">'p'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">tag</span>.attrs</span><br><span class="line">Out[<span class="number">9</span>]: &#123;<span class="string">'class'</span>: [<span class="string">'title'</span>]&#125;</span><br><span class="line"></span><br><span class="line">#Tag属性的操作 和我们后面要讲的字典一样的 所以可以通过这样的方式来获取属性 </span><br><span class="line"><span class="keyword">tag</span>[<span class="string">'class'</span>]</span><br><span class="line">Out[<span class="number">10</span>]: [<span class="string">'title'</span>]</span><br><span class="line"></span><br><span class="line"># NavigableString对象可以用<span class="built_in">string</span>属性来表示 </span><br><span class="line"><span class="keyword">tag</span>.<span class="built_in">string</span></span><br><span class="line">Out[<span class="number">11</span>]: <span class="string">'The little Prince'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>(<span class="keyword">tag</span>.<span class="built_in">string</span>)</span><br><span class="line">Out[<span class="number">12</span>]: bs4.element.NavigableString # 后期很常用</span><br><span class="line"></span><br><span class="line">soup.find_all(<span class="string">'b'</span>) # 参数可以是标签或者属性名, 只需要找第一个可以用<span class="keyword">find</span>方法</span><br><span class="line">Out[<span class="number">13</span>]: [<span class="symbol">&lt;b&gt;</span>The little Prince&lt;/<span class="keyword">b</span>&gt;]</span><br><span class="line"></span><br><span class="line">#find_all 方法返回一个列表</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><ul>
+<li>在线测试/调试工具<ul>
+<li><a href="https://regex101.com/" target="_blank" rel="noopener">https://regex101.com/</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h2><h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><ul>
+<li>成员<ul>
+<li>字符串</li>
+<li>元祖</li>
+<li>列表</li>
+</ul>
+</li>
+<li>访问模式<ul>
+<li>元素从0开始通过下标偏移量访问</li>
+<li>一次可访问一个或多个元素</li>
+</ul>
+</li>
+<li><p>操作</p>
+<ul>
+<li><p>标准类型运算符</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> 值比较: &lt; &gt; &lt;= &gt;= == !=</span><br><span class="line">布尔运算: <span class="keyword">not</span> <span class="keyword">and</span> <span class="keyword">or</span></span><br><span class="line">对象身份比较: <span class="keyword">is</span> <span class="keyword">is</span> <span class="keyword">not</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>序列类型运算符</p>
+<blockquote>
+<p>获取，重复，连接，判断</p>
+</blockquote>
+</li>
+<li>内减函数运算符<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> 序列类型转换内建函数: list() str() tuple()</span><br><span class="line">&gt;&gt;&gt; list(<span class="string">'Hello, World!'</span>)</span><br><span class="line">[<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">','</span>, <span class="string">' '</span>, <span class="string">'W'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'l'</span>, <span class="string">'d'</span>, <span class="string">'!'</span>] </span><br><span class="line">&gt;&gt;&gt; tuple(<span class="string">"Hello, World!"</span>)</span><br><span class="line">(<span class="string">'H'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">','</span>, <span class="string">' '</span>, <span class="string">'W'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'l'</span>, <span class="string">'d'</span>, <span class="string">'!'</span>)</span><br><span class="line"></span><br><span class="line">序列类型可用内建函数</span><br><span class="line"><span class="function"><span class="title">enumerate</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">reversed</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">len</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">sorted</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">max</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">sum</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">min</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">zip</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>输出形式<ul>
+<li>format_string % (arguments_to_convert)</li>
+<li>format_string.format(arguments_to_convert)<br><img src="/images/Python-NJU-wekk2-2.png" alt=""><br><img src="/images/Python-NJU-wekk2-3.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
+<li>可扩展的容器对象</li>
+<li>包含不同类型对象</li>
+<li>列表方法<ul>
+<li>append()</li>
+<li>copy()</li>
+<li>count()</li>
+<li>extend()</li>
+<li>index()</li>
+<li>insert()</li>
+<li>pop()</li>
+<li>remove()</li>
+<li>reverse()</li>
+<li>sort()</li>
+</ul>
+</li>
+<li>列表解析  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [x for x in range(<span class="number">10</span>)]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">&gt;&gt;&gt; [x ** <span class="number">2</span> for x in range(<span class="number">10</span>)]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>]</span><br><span class="line">&gt;&gt;&gt; [x ** <span class="number">2</span> for x in range(<span class="number">10</span>) if x ** <span class="number">2</span> &lt; <span class="number">50</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>]</span><br><span class="line">&gt;&gt;&gt; [(x+<span class="number">1</span>, y+<span class="number">1</span>) for x in range(<span class="number">2</span>) for y in range(<span class="number">2</span>)] </span><br><span class="line">[(<span class="number">1</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>,</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/week3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/week3/" itemprop="url">第三周</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T16:32:31+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计划/" itemprop="url" rel="index">
+                    <span itemprop="name">计划</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/12/week3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/12/week3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="周一"><a href="#周一" class="headerlink" title="周一"></a>周一</h2><ul>
+<li>邹博算法课——字符串</li>
+<li>用Python玩转数据整理</li>
+</ul>
+<h2 id="周二"><a href="#周二" class="headerlink" title="周二"></a>周二</h2><ul>
+<li>用Python玩转数据 作业</li>
+<li>LeetCode<ul>
+<li>Climbing Stairs</li>
+</ul>
+</li>
+<li>总结：<ul>
+<li>字符串算法部分，比自己想象地更花费时间，还得单独拿出一天来实现算法</li>
+<li>用Python玩转数据，一周的内容量还是挺大，也需要花费更多的时间</li>
+</ul>
+</li>
+</ul>
+<h2 id="周三"><a href="#周三" class="headerlink" title="周三"></a>周三</h2><ul>
+<li>LeetCode<ul>
+<li>Longest Palindromic Substring</li>
+</ul>
+</li>
+<li>用Python玩转数据- week2 整理</li>
+<li>邹博算法课<ul>
+<li>LCS</li>
+<li>Manacher算法实现</li>
+</ul>
+</li>
+</ul>
+<h2 id="周四"><a href="#周四" class="headerlink" title="周四"></a>周四</h2><ul>
+<li>用Python玩转数据- week3 整理</li>
+<li>邹博算法课<ul>
+<li>KMP实现</li>
+<li>KMP时间复杂度思考</li>
+<li>字符串周期性思考</li>
+</ul>
+</li>
+<li>LeetCode<ul>
+<li>Implement strStr()</li>
+</ul>
+</li>
+</ul>
+<h2 id="周五"><a href="#周五" class="headerlink" title="周五"></a>周五</h2><ul>
+<li>用Python玩转数据——week4</li>
+<li>博客整理<ul>
+<li>KMP时间复杂度分析</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/用Python玩转数据——Week1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/用Python玩转数据——Week1/" itemprop="url">用Python玩转数据——Week1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T21:10:14+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/用Python玩转数据/" itemprop="url" rel="index">
+                    <span itemprop="name">用Python玩转数据</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/10/用Python玩转数据——Week1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/10/用Python玩转数据——Week1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="第一个Python程序"><a href="#第一个Python程序" class="headerlink" title="第一个Python程序"></a>第一个Python程序</h2><ul>
+<li>运行方式<ul>
+<li>Shell方式</li>
+<li>文件方式<blockquote>
+<p>模块是对象，并且所有的模块都有一个内置属性 <strong>name</strong>。一个模块的 <strong>name</strong> 的值取决于您如何应用模块。如果 import 一个模块，那么模块<strong>name</strong> 的值通常为模块文件名，不带路径或者文件扩展名。但是您也可以像一个标准的程序样直接运行模块，在这 种情况下, <strong>name</strong> 的值将是一个特别缺省”<strong>main</strong>“。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>IO<ul>
+<li>输入<br>  var = input();<br>  Python 3.x中raw_input() 和input()整合成了input()， 返回类型为str</li>
+<li>输出<br>  print语句</li>
+</ul>
+</li>
+<li><p>代码风格</p>
+<ul>
+<li>注释 # comment</li>
+<li><p>续行</p>
+<ul>
+<li>续行符</li>
+<li>括号内的内容</li>
+<li>三引号<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;print(<span class="string">'''hello </span></span><br><span class="line"><span class="string">world'''</span>)</span><br><span class="line">hello</span><br><span class="line">world</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="string">'''hello</span></span><br><span class="line"><span class="string"><span class="meta">... </span>work'''</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == <span class="string">'hello work'</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = <span class="string">'hello work'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = <span class="string">'hello \</span></span><br><span class="line"><span class="string">... work'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y == z</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>缩进——语句块</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
+<li>变量： 标识对象，引用对象</li>
+<li>标识符： 合法的变量名称</li>
+<li><p>关键字</p>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Python中的对象包含三要素：id、type、value</span><br><span class="line">其中id用来唯一标识一个对象，type标识对象的类型，value是对象的值</span><br><span class="line"></span><br><span class="line">is判断的是a对象是否就是b对象，是通过id来判断的</span><br><span class="line">==判断的是a对象的值是否和b对象的值相等，是通过value来判断的</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; a=<span class="number">100</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b=<span class="number">100.0</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; a is b</span><br><span class="line">False</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; a==b</span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; id(a)</span><br><span class="line"><span class="number">30696848</span>L</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; id(b)</span><br><span class="line"><span class="number">48685000</span>L</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; id(a)==id(b)</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运算符</p>
+<ul>
+<li>算术运算符</li>
+<li>位运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+</ul>
+</li>
+<li>表达式：用运算符连接各种类型数据的式子</li>
+<li><p>赋值：给变量类型和“值”</p>
+<ul>
+<li>增量赋值<br>  m %= 5<br>  没有 m++ 这样的语句</li>
+<li>多重赋值<br>  PI = pi = 3.14159</li>
+<li><p>多元赋值</p>
+<blockquote>
+<p> x, y = y, x<br> 等式俩边是元祖</p>
+</blockquote>
+<blockquote>
+<p> 多重赋值PI, r = 3.14159, 3的本质由两个步骤构成：<br>  temp = 3.14159, 3 # 元组打包（Tuple packing）<br>  PI, r = temp # 序列解包（Sequence unpacking），多重赋值有时也称为序列解包<code></code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>语句：完整执行一个任务的一行逻辑代码<ul>
+<li>语句包含表达式</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+<p>必须有明确的数据类型，程序才能分配给常量、变量精确 的存储大小，才能进行精确或高效率的运算</p>
+</blockquote>
+<ul>
+<li><p>Python标准数据类型</p>
+<ul>
+<li><p>（长）整型</p>
+<blockquote>
+<p>Python 3.x中没 有long类型， 整数都是int型<br>存储大小跟内存有关，不会发生溢出问题</p>
+  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; x = <span class="number">100000000000000000000000000000</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x **=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x</span><br><span class="line"><span class="number">10000000000000000000000000000000000000000000000000000000000</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x **=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; x</span><br><span class="line"><span class="number">100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>浮点型</p>
+<blockquote>
+<p>没有double</p>
+</blockquote>
+</li>
+<li>复数型</li>
+<li>布尔型</li>
+<li>序列类型<ul>
+<li>字符串: 不可变</li>
+<li>列表：可变</li>
+<li>元组：不可变</li>
+</ul>
+</li>
+<li>映射类型<ul>
+<li>字典</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h2><ul>
+<li>算术运算符<blockquote>
+<p>乘方 <em>**  正负号+ -<br>乘除 </em> /  整除//<br>取余%    加减+ -</p>
+</blockquote>
+</li>
+<li>比较运算<blockquote>
+<p>3 &lt; 4 &lt; 7 # same as ( 3 &lt; 4 ) and ( 4 &lt; 7 )<br>True<br>4 &gt; 3 == 3 # same as ( 4 &gt; 3 ) and ( 3 == 3 )<br>True<br>4 &lt; 3 &lt; 5 != 2 &lt; 7<br>False</p>
+</blockquote>
+</li>
+<li>逻辑运算</li>
+<li>字符运算符<ul>
+<li>原始字符串操作符 (r / R)</li>
+<li>Unicode 字符串操作符( u / U )</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数、模块和包"><a href="#函数、模块和包" class="headerlink" title="函数、模块和包"></a>函数、模块和包</h2><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li><p>内建函数</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">绝对值函数abs(x)</span><br><span class="line">类型函数type(x)</span><br><span class="line">四舍五入函数round(x)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">3.4</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">4.6</span>)</span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">3.5</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; round(<span class="number">2.5</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line">四舍六入五成双</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非内建函数: 非内建函数的使用需要靠模块引入</p>
+</li>
+</ul>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>一个完整的Python文件即是一个模块</p>
+<ul>
+<li>文件:物理上的组织方式 math.py</li>
+<li>模块:逻辑上的组织方式 math</li>
+</ul>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ul>
+<li>一个有层次的文件目录结构</li>
+<li>定义了一个由模块和子包组成 的 Python 应用程序执行环境</li>
+</ul>
+<h3 id="库"><a href="#库" class="headerlink" title="库"></a>库</h3><ul>
+<li>库是一组具有相关功 能的模块的集合</li>
+</ul>
+<h2 id="RANGE和-XRANGE"><a href="#RANGE和-XRANGE" class="headerlink" title="RANGE和 XRANGE"></a>RANGE和 XRANGE</h2><ul>
+<li>range():Python3返回的是一个range对象，需要用list(range())方式进行调用<blockquote>
+<p>range (start, end, step=1)<br>range (start, end)<br>range (end)</p>
+</blockquote>
+</li>
+<li>xrange<br>  Python3 不支持xrange()</li>
+</ul>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ul>
+<li><p>while</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">expression</span>: </span><br><span class="line">    suite_to_repeat</span><br><span class="line"></span><br><span class="line">• 条件表达式</span><br><span class="line">• 当 <span class="keyword">expression</span> 值 为 True</span><br><span class="line">时执行suite_to_repeat代码块</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> iter<span class="number">_</span>var <span class="keyword">in</span> iterable<span class="number">_</span><span class="keyword">object</span>: </span><br><span class="line">    suite<span class="number">_</span>to<span class="number">_</span>repeat</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>可以明确循环的次数</p>
+<ul>
+<li>遍历一个数据集内的成员 </li>
+<li>在列表解析中使用</li>
+<li>生成器表达式中使用</li>
+</ul>
+</li>
+<li><p>iterable_object</p>
+<ul>
+<li>String</li>
+<li>List</li>
+<li>Tuple</li>
+<li>Dictionary </li>
+<li>File</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>循环中的else语句<ul>
+<li>如果循环代码从break处终止，跳出循环</li>
+<li>正常结束循环，则执行else中代码</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h2><h3 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h3><h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addMe2Me</span><span class="params">(x)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="string">'apply operation + to argument'</span> <span class="comment">#DocString，用来说明文本</span></span><br><span class="line">    <span class="keyword">return</span> (x+x)</span><br></pre></td></tr></table></figure>
+<p>print(fn._doc)：查看函数文档</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li>默认参数<blockquote>
+<p>默认参数一般需要放置在参数列表的最后</p>
+</blockquote>
+</li>
+<li>关键字参数<blockquote>
+<p>关键字参数是让调用 者通过使用参数名区 分参数。允许改变参 数列表中的参数顺序</p>
+</blockquote>
+</li>
+<li>传递函数<blockquote>
+<p>函数可以像参数一样传递给另外一个函数</p>
+</blockquote>
+</li>
+<li>lamda函数<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lambda     <span class="keyword">x</span>, y  :  <span class="keyword">x</span> + y</span><br><span class="line"></span><br><span class="line">my_add = lambda <span class="keyword">x</span>, y :  <span class="keyword">x</span> + y</span><br><span class="line">&gt;&gt;&gt; my_add(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><ul>
+<li>全局变量</li>
+<li><p>局部变量</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Filename: scopeofvar.py</span></span><br><span class="line">def f(x): </span><br><span class="line">    print <span class="keyword">a</span></span><br><span class="line">    <span class="keyword">a</span> =<span class="number">5</span> </span><br><span class="line">    print <span class="keyword">a</span> + x</span><br><span class="line"></span><br><span class="line"><span class="keyword">a</span>= <span class="number">3</span> </span><br><span class="line">f(<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line">UnboundLocalError: <span class="built_in">local</span> <span class="built_in">variable</span> <span class="string">'a'</span> referenced <span class="keyword">before</span> assignment</span><br><span class="line"><span class="comment"># 在这里 a 为全局变量</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>global语句</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">global</span>语句强调全局变量</span><br><span class="line"></span><br><span class="line"><span class="comment"># Filename: scopeofvar.py</span></span><br><span class="line">def f(x): </span><br><span class="line">    <span class="built_in">global</span> <span class="keyword">a</span></span><br><span class="line">    print <span class="keyword">a</span> </span><br><span class="line">    <span class="keyword">a</span>= <span class="number">5</span> </span><br><span class="line">    print <span class="keyword">a</span> + x</span><br><span class="line"></span><br><span class="line"><span class="keyword">a</span>= <span class="number">3</span> </span><br><span class="line">f(<span class="number">8</span>) </span><br><span class="line">print <span class="keyword">a</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">Output: <span class="number">3</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/LeetCode42-Trapping-Rain-Water/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/LeetCode42-Trapping-Rain-Water/" itemprop="url">LeetCode42. Trapping Rain Water</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T11:03:42+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/10/LeetCode42-Trapping-Rain-Water/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/10/LeetCode42-Trapping-Rain-Water/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="思路构建"><a href="#思路构建" class="headerlink" title="思路构建"></a>思路构建</h2><h3 id="满足什么要求才会积水？"><a href="#满足什么要求才会积水？" class="headerlink" title="满足什么要求才会积水？"></a>满足什么要求才会积水？</h3><p>必须存在一个左边界left，一个右边界right，且高度大于height[i]</p>
+<p><img src="/images/LeetCode42-1.png" alt="图一"><br><strong>需要明确对积水面积F[i]的定义：</strong></p>
+<blockquote>
+<p>以高度height[i]为底，存在比height[i]高的左右界，围成的面积</p>
+</blockquote>
+<p>对于图一，明显F[i]就是满足该定义的一块积水面积</p>
+<p><img src="/images/LeetCode42-2.png" alt=""><br>对于图二：</p>
+<ul>
+<li>F[1] 满足，其左右边界分别为0，4</li>
+<li>F[2] 满足，其左右边界为1，3</li>
+<li>F[3] 满足，其左右边界为0，4</li>
+</ul>
+<p>因为F[i]是指，对于特定的左右边界，底高为height[i]的面积，因此F[1]，F[3]其实是重复计算</p>
+<p>所以我们可以指计算F[3]，舍去同一个左右边界中，前面的高度为height[i]的点</p>
+<p><img src="/images/LeetCode42-3.png" alt="&quot;图三&quot;"><br>F[1]对应黄色部分<br>F[2]对应橙色部分<br>F[3]对应红色部分</p>
+<p><strong>怎么计算这个面积？</strong></p>
+<blockquote>
+<p>num = h * distance；<br>h = Math.min(height[])</p>
+</blockquote>
+<h3 id="怎么确定F-i-的左右边界？"><a href="#怎么确定F-i-的左右边界？" class="headerlink" title="怎么确定F[i]的左右边界？"></a>怎么确定F[i]的左右边界？</h3><blockquote>
+<p>维护一个递减的栈</p>
+</blockquote>
+<p>对于下标i，值为c，判断c是否小于栈顶元素</p>
+<ul>
+<li>如果小于，则已经找到了F[i]的左边界，但是仍未找到右边界，需要在后面确定，因此先放到栈中</li>
+<li>如果大于，贼栈顶元素的右边界已经出现了，弹栈<ul>
+<li>但是可能对于这个c，它同时也是弹完栈后的元素的右边界，因此需要继续判断，直到 c &lt; height[stack.peek()]</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">int</span> trap(<span class="keyword">int</span>[] <span class="built_in">height</span>) &#123;</span><br><span class="line">		<span class="built_in">if</span>(<span class="built_in">height</span> == null || <span class="built_in">height</span>.length == <span class="number">0</span>) <span class="built_in">return</span> <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">		<span class="built_in">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">height</span>.length; i++) &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//维护一个递减栈，只有当height[i] &lt; height[stack.peek()]</span></span><br><span class="line">			<span class="comment">//栈内存储的是该值，位于数组中的下标</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment">//对于一个bar，只有当这个bar存在左右边界，才会积水</span></span><br><span class="line">			<span class="built_in">while</span>(!stack.isEmpty() &amp;&amp; <span class="built_in">height</span>[i] &gt; <span class="built_in">height</span>[stack.<span class="built_in">peek</span>()] ) &#123;</span><br><span class="line">				<span class="comment">//如果height[i] &gt; height[stack.peek()],意味着栈顶元素的右边界出现了</span></span><br><span class="line">				</span><br><span class="line">				<span class="comment">//弹栈</span></span><br><span class="line">				<span class="keyword">int</span> top = stack.pop();</span><br><span class="line">				</span><br><span class="line">				<span class="comment">//如果这个栈为空，意味着 栈顶元素的左边界不存在，不会有积水</span></span><br><span class="line">				<span class="built_in">if</span>(stack.isEmpty()) <span class="built_in">break</span>;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">int</span> distance = i - stack.<span class="built_in">peek</span>() - <span class="number">1</span>;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">int</span> h = Math.<span class="built_in">min</span>(<span class="built_in">height</span>[stack.<span class="built_in">peek</span>()], <span class="built_in">height</span>[i]) - <span class="built_in">height</span>[top];</span><br><span class="line">				</span><br><span class="line">				result += h * distance; </span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			stack.push(i);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/LeetCode20-Valid-Parentheses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/LeetCode20-Valid-Parentheses/" itemprop="url">LeetCode20. Valid Parentheses</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T09:56:30+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/10/LeetCode20-Valid-Parentheses/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/10/LeetCode20-Valid-Parentheses/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="思路构思"><a href="#思路构思" class="headerlink" title="思路构思"></a>思路构思</h2><p>针对这个题目，先想几组input进行分析</p>
+<p><strong>输入input</strong></p>
+<ul>
+<li>(())<blockquote>
+<p>在从左到右遍历过程中input[0]在遍历到它时，无法知道它会和后面哪一个括号匹配<br>因此需要把它先保存起来，但是如果存在一个右括号，它的匹配顺序又会是自右向左匹配的</p>
+<p>因此可以得出结论，可以凭借栈来完成这项要求</p>
+</blockquote>
+</li>
+<li>()()<blockquote>
+<p>针对这种匹配情况，上述思路也能满足</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">boolean</span> isValid(<span class="built_in">String</span> s) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(s == <span class="built_in">null</span> || s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">		int len = s.length();</span><br><span class="line">		<span class="built_in">Stack</span>&lt;Character&gt; <span class="built_in">stack</span> = <span class="literal">new</span> <span class="built_in">Stack</span>&lt;&gt;();</span><br><span class="line">		<span class="built_in">Set</span>&lt;Character&gt; frontSet = <span class="literal">new</span> HashSet&lt;&gt;();</span><br><span class="line">		<span class="built_in">Set</span>&lt;Character&gt; endSet = <span class="literal">new</span> HashSet&lt;&gt;();</span><br><span class="line">		frontSet.add(<span class="string">'('</span>);</span><br><span class="line">		frontSet.add(<span class="string">'['</span>);</span><br><span class="line">		frontSet.add(<span class="string">'&#123;'</span>);</span><br><span class="line">		for(int i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">			Character c = s.charAt(i);</span><br><span class="line">			<span class="keyword">if</span>(frontSet.contains(c)) &#123;</span><br><span class="line">				<span class="built_in">stack</span>.push(c);</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">stack</span>.isEmpty()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">				Character t = <span class="built_in">stack</span>.pop();</span><br><span class="line">				<span class="keyword">if</span>(c == <span class="string">')'</span> &amp;&amp; t != <span class="string">'('</span>) &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">']'</span> &amp;&amp; t != <span class="string">'['</span>) &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">'&#125;'</span> &amp;&amp; t != <span class="string">'&#123;'</span>) &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!<span class="built_in">stack</span>.isEmpty()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/10/LeetCode32-Longest-Valid-Parentheses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/LeetCode32-Longest-Valid-Parentheses/" itemprop="url">LeetCode32. Longest Valid Parentheses</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T09:39:48+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/10/LeetCode32-Longest-Valid-Parentheses/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/10/LeetCode32-Longest-Valid-Parentheses/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="思考构思"><a href="#思考构思" class="headerlink" title="思考构思"></a>思考构思</h2><p>首先针对括号匹配问题：借鉴LeetCode20那题的经验，我们可以想到借助栈，接下来就开始验证栈是否能解决该问题</p>
+<h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h3><ol>
+<li>考察第i位字符c</li>
+<li>如果c为左括号，把位置坐标i压栈</li>
+<li>如果c为右括号，对栈进行弹栈，得到index，i-index+1 就是匹配的长度</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>对于(())，算法有效</li>
+<li>对于输入()()，算法无效</li>
+</ul>
+<p>需要针对第二种情况，重新构思</p>
+<h3 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h3><ol>
+<li>考察第i位字符c</li>
+<li>如果c为左括号，把位置坐标i压栈</li>
+<li>如果c为右括号，如果栈非空（匹配成功），对栈进行弹栈，访问弹栈后的栈顶元素index<ul>
+<li>由该算法可知，此时栈顶元素(stack.peek())代表着是最右边不匹配位置，i到index之间的括号都是匹配的，即i-index 就是匹配的长度</li>
+</ul>
+</li>
+<li>如果c为右括号，栈为空（匹配失败）,或者栈顶元素所代表的字符不是’(‘ (匹配失败)，将i入栈</li>
+</ol>
+<p><strong>验证</strong></p>
+<ul>
+<li>对于(())，算法有效</li>
+<li>对于(),算法错误，没有考虑边界问题</li>
+</ul>
+<h3 id="思路三"><a href="#思路三" class="headerlink" title="思路三"></a>思路三</h3><p>在思路二的第3步，在防卫stack.peek()时，需要先判断栈是否为空，如果为空，意味着从0到i都是匹配的，index代表最靠近i的一处不匹配位置，因此这里因设为-1</p>
+<p><strong>验证</strong></p>
+<ul>
+<li>对于(())，算法有效</li>
+<li>对于()()，算法有效</li>
+</ul>
+<h2 id="思考边界值"><a href="#思考边界值" class="headerlink" title="思考边界值"></a>思考边界值</h2><ul>
+<li>s为空</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestValidParentheses</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(s == null || s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		Stack&lt;Integer&gt; <span class="built_in">stack</span> = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="built_in">stack</span>.push(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> front = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (s.charAt(i) == <span class="string">'('</span>) &#123;</span><br><span class="line">				<span class="built_in">stack</span>.push(i);</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">stack</span>.isEmpty() || s.charAt(<span class="built_in">stack</span>.peek()) != <span class="string">'('</span>) &#123;</span><br><span class="line">				<span class="built_in">stack</span>.push(i);</span><br><span class="line">				</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">stack</span>.pop();</span><br><span class="line">				<span class="keyword">int</span> index = <span class="number">-1</span>;</span><br><span class="line">				<span class="keyword">if</span>(!<span class="built_in">stack</span>.isEmpty()) &#123;</span><br><span class="line">					index = <span class="built_in">stack</span>.peek();</span><br><span class="line">				&#125;</span><br><span class="line">				len = Math.max(len, i - index );</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> len;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/机器学习学习路径/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/09/机器学习学习路径/" itemprop="url">机器学习学习路径</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T12:47:31+08:00">
+                2018-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/09/机器学习学习路径/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/09/机器学习学习路径/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>学习计算机是一件很幸福的事情，相比其他学科，可以以很低的成本获取非常优质的资源。</p>
+<p>在学校，你不需要担心上什么课，看什么书，但是现在自己学习，总想着能把有限的时间，花在最适合自己的课程和书籍中去，以下是我最近的一些思考。</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li>网课<ul>
+<li>Machine Learning —— Coursera(finished,入门课程吧，数学推导要求不高，编程作业好评)</li>
+<li>机器学习基石 —— Coursera（很好的课）</li>
+<li>机器学习技法 —— Coursera</li>
+<li>deeplearning.ai —— Coursera(网上一种评价是：最简单的深度学习课)</li>
+<li>邹博 机器学习(个人挺喜欢，有很好的数学推导，但需要好好消化,缺少练习)</li>
+<li>Machine Learning nondegree —— Udacity(偏实战，数学要求很低)</li>
+<li>MLDS —— NTU 李宏毅（摸索）</li>
+<li>Neural Networks for Machine Learning —— Coursera(评价很高，但据说难度大，可以当进阶课程)</li>
+</ul>
+</li>
+<li>书籍<ul>
+<li>《统计学习方法》</li>
+<li>《机器学习》—— 周志华</li>
+<li>《集体智慧编程》</li>
+<li>《TensorFlow 实战Google深度学习框架》</li>
+</ul>
+</li>
+</ul>
+<h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><ol>
+<li>第一阶段<ul>
+<li>机器学习基石: 一周俩次课</li>
+<li>MLDS : 一周俩次课</li>
+<li>《统计学习方法》</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/hexo配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/hexo配置/" itemprop="url">Hexo配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T20:04:11+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/07/hexo配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/07/hexo配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> <strong>配置步骤</strong></p>
+<ul>
+<li>创建github pages</li>
+<li>创建本地hexo环境</li>
+<li>选择hexo主题</li>
+<li>优化配置</li>
+</ul>
+<h3 id="创建github-pages"><a href="#创建github-pages" class="headerlink" title="创建github pages"></a>创建github pages</h3><p>登录github，创建一个新的repository，但仓库名的格式必须为：github账号名.github.io</p>
+<h3 id="创建hexo环境"><a href="#创建hexo环境" class="headerlink" title="创建hexo环境"></a>创建hexo环境</h3><ol>
+<li>hexo需要用到nodejs，因此先去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener"><strong>nodejs官网</strong></a>安装nodejs环境</li>
+<li>按照<a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener"><strong>hexo官网</strong></a>按照hexo</li>
+<li>建站，安装完Hexo后，在执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>更多配置信息，可以参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="noopener"><strong>Hexo文档</strong></a></p>
+<h3 id="选择Hexo主题"><a href="#选择Hexo主题" class="headerlink" title="选择Hexo主题"></a>选择Hexo主题</h3><p>我使用的是Next，可以从github上下载<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a></p>
+<p>需要注意的是，按照github上指令安装的版本是5.1.2版本，但如果想添加第三方Valine的评论功能，需要安装5.1.3以上的版本</p>
+<p>Next具体细节可以参考<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener"><strong>Next文档</strong></a></p>
+<h3 id="优化配置"><a href="#优化配置" class="headerlink" title="优化配置"></a>优化配置</h3><ol>
+<li><p>配置git<br>因为要将最新的博客，上传到github上，需要输入以下指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo g -d</span></span><br></pre></td></tr></table></figure>
+<p> 而执行hexo g -d 需要用户输入其相应的github账号名和密码，为了避免每次提交，都输入账号和密码，需要设置SSH keys，具体可以参考<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="noopener"><strong>廖雪峰git教程</strong></a></p>
+</li>
+<li><p>添加评论<br>这里用到了next中集成的第三方服务</p>
+<p> Hexo的评论系统有很多，常见的有</p>
+<ul>
+<li>多说</li>
+<li>网易云跟帖</li>
+<li>畅言</li>
+<li>来必力（LiveRe）</li>
+<li>Disqus</li>
+<li>Hypercomments</li>
+<li><p>valine<br>其中多说和网易云已经失效，而来必力用的是国外服务器，每次加载都很慢，所以建议使用valine</p>
+<p>具体可以参考<br><a href="https://www.bluelzy.com/articles/use_valine_for_your_blog.html" target="_blank" rel="noopener">https://www.bluelzy.com/articles/use_valine_for_your_blog.html</a></p>
+</li>
+</ul>
+</li>
+<li><p>添加动态效果<br> 看到别人使用hexo搭建的博客有酷炫的动态效果，上网搜了一下后发现，其实实现起来很方便</p>
+<p> 前端效果<br> <a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">https://segmentfault.com/a/1190000009544924</a></p>
+</li>
+<li><p>代码高亮</p>
+<p> 在站点的_config.yml中如下配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  tab_replace:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码段折叠<br>写LeetCode题解时，发现代码太长了，影响阅读，所以想实现一下代码段的折叠</p>
+<p> 具体参考<br> <a href="https://www.cnblogs.com/woshimrf/p/hexo-fold-block.html" target="_blank" rel="noopener">https://www.cnblogs.com/woshimrf/p/hexo-fold-block.html</a></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/week2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/06/week2/" itemprop="url">第二周</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T22:01:53+08:00">
+                2018-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计划/" itemprop="url" rel="index">
+                    <span itemprop="name">计划</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/06/week2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/06/week2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="周一"><a href="#周一" class="headerlink" title="周一"></a>周一</h2><ul>
+<li>邹博算法课——链表、栈、队列</li>
+<li>LeetCode<ul>
+<li>Merge k Sorted Lists</li>
+<li>Merge Two Sorted Lists</li>
+</ul>
+</li>
+<li>deeplearning.ai week1</li>
+</ul>
+<h2 id="周二"><a href="#周二" class="headerlink" title="周二"></a>周二</h2><ul>
+<li>用Python玩转数据 week1</li>
+<li>LeetCode<ul>
+<li>Pow(x, n)</li>
+<li>Add Two Numbers</li>
+<li>Median of Two Sorted Arrays</li>
+</ul>
+</li>
+<li>Hexo<ul>
+<li>代码语法高亮</li>
+<li>代码块折叠</li>
+</ul>
+</li>
+</ul>
+<h2 id="周三"><a href="#周三" class="headerlink" title="周三"></a>周三</h2><ul>
+<li>用Python玩转数据 week2</li>
+<li>LeetCode<ul>
+<li>Remove Duplicates from Sorted List II</li>
+<li>Remove Duplicates from Sorted List</li>
+<li>Swap Nodes in Pairs</li>
+<li>Remove Nth Node From End of List</li>
+<li>Reverse Nodes in k-Group</li>
+</ul>
+</li>
+<li>配置git</li>
+<li>博客</li>
+</ul>
+<h2 id="周四"><a href="#周四" class="headerlink" title="周四"></a>周四</h2><ul>
+<li>MLDS第二次课：2.5h</li>
+<li>LeetCode<ul>
+<li>20 Valid Parentheses    </li>
+<li>92 Reverse Linked List II</li>
+<li>86 Partition List</li>
+</ul>
+</li>
+</ul>
+<h2 id="周五"><a href="#周五" class="headerlink" title="周五"></a>周五</h2><ul>
+<li>机器学习——林轩田</li>
+<li>LeetCode: 这俩题刷新了我对栈的认知，但仔细思考之后，收获良多<ul>
+<li>84 Largest Rectangle in Histogram</li>
+<li>42 Trapping Rain Water</li>
+</ul>
+</li>
+</ul>
+<h2 id="周六"><a href="#周六" class="headerlink" title="周六"></a>周六</h2><ul>
+<li>博客： 三篇题解</li>
+<li>LeetCode<ul>
+<li>32 Longest Valid Parentheses</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/picture.jpg"
+                alt="Kai Niu" />
+            
+              <p class="site-author-name" itemprop="name">Kai Niu</p>
+              <p class="site-description motion-element" itemprop="description">Hello World!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/nk2000" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Niu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'N8skWHk3GKLFdM8IIdCfVLU8-gzGzoHsz',
+        appKey: 'VqDfWPnFAAaoh8PGn5nnCMSR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

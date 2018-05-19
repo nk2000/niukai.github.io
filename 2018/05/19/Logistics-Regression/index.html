@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,Logistic Regression,交叉熵,KL散度," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="模型定义特征 x：m*nlabel y：m*1不同的x，@对应一个不同的二项分布这些二项分布可以通过统计求得 改进不按照x是否相同，来统计其二项分布的分布律，而每一个样本点都看做一个独立二项分布 这样的特点就是这样的二项分布只有俩种，分别为 并且能合并表示为  目标函数——交叉熵小目标：对于每一个样本点，分别求出一个分布，使得俩者分布差距最小 模型目标：所有的样本差距之和最小 KL散度 Kullb">
+<meta name="keywords" content="机器学习,Logistic Regression,交叉熵,KL散度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Logistics Regression">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/Logistics-Regression/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="模型定义特征 x：m*nlabel y：m*1不同的x，@对应一个不同的二项分布这些二项分布可以通过统计求得 改进不按照x是否相同，来统计其二项分布的分布律，而每一个样本点都看做一个独立二项分布 这样的特点就是这样的二项分布只有俩种，分别为 并且能合并表示为  目标函数——交叉熵小目标：对于每一个样本点，分别求出一个分布，使得俩者分布差距最小 模型目标：所有的样本差距之和最小 KL散度 Kullb">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/LR-8.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-4.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-3.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-9.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-1.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-2.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-7.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-5.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-6.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-9.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-10.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-6.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-11.png">
+<meta property="og:image" content="http://yoursite.com/images/LR-12.png">
+<meta property="og:updated_time" content="2018-05-19T14:24:57.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Logistics Regression">
+<meta name="twitter:description" content="模型定义特征 x：m*nlabel y：m*1不同的x，@对应一个不同的二项分布这些二项分布可以通过统计求得 改进不按照x是否相同，来统计其二项分布的分布律，而每一个样本点都看做一个独立二项分布 这样的特点就是这样的二项分布只有俩种，分别为 并且能合并表示为  目标函数——交叉熵小目标：对于每一个样本点，分别求出一个分布，使得俩者分布差距最小 模型目标：所有的样本差距之和最小 KL散度 Kullb">
+<meta name="twitter:image" content="http://yoursite.com/images/LR-8.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/19/Logistics-Regression/"/>
+
+
+
+
+
+  <title>Logistics Regression | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/19/Logistics-Regression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Logistics Regression</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T18:45:29+08:00">
+                2018-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/19/Logistics-Regression/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/19/Logistics-Regression/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="模型定义"><a href="#模型定义" class="headerlink" title="模型定义"></a>模型定义</h2><p>特征 x：m*n<br>label y：m*1<br>不同的x，@对应一个不同的二项分布<br>这些二项分布可以通过统计求得</p>
+<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><p>不按照x是否相同，来统计其二项分布的分布律，而每一个样本点都看做一个独立二项分布<br><img src="/images/LR-8.png" alt=""></p>
+<p>这样的特点就是这样的二项分布只有俩种，分别为</p>
+<p><img src="/images/LR-4.png" alt=""><br>并且能合并表示为</p>
+<p><img src="/images/LR-3.png" alt=""><br><img src="/images/LR-9.png" alt=""></p>
+<h2 id="目标函数——交叉熵"><a href="#目标函数——交叉熵" class="headerlink" title="目标函数——交叉熵"></a>目标函数——交叉熵</h2><p>小目标：对于每一个样本点，分别求出一个分布，使得俩者分布差距最小</p>
+<p>模型目标：所有的样本差距之和最小</p>
+<h3 id="KL散度"><a href="#KL散度" class="headerlink" title="KL散度"></a>KL散度</h3><blockquote>
+<p>Kullback-Leibler Divergence，即K-L散度，是一种量化两种概率分布P和Q之间差异的方式，又叫相对熵。在概率学和统计学上，我们经常会使用一种更简单的、近似的分布来替代观察数据或太复杂的分布。K-L散度能帮助我们度量使用一个分布来近似另一个分布时所损失的信息。<br>参考链接：<a href="https://www.jianshu.com/p/43318a3dc715" target="_blank" rel="noopener">https://www.jianshu.com/p/43318a3dc715</a></p>
+</blockquote>
+<p><img src="/images/LR-1.png" alt=""></p>
+<p>K-L散度是数据的原始分布p和近似分布q之间的对数差值的期望</p>
+<p><img src="/images/LR-2.png" alt=""></p>
+<p>其中分布p是我们上面统计出来的数据分布</p>
+<h3 id="KL散度与交叉熵的关系"><a href="#KL散度与交叉熵的关系" class="headerlink" title="KL散度与交叉熵的关系"></a>KL散度与交叉熵的关系</h3><p><img src="/images/LR-7.png" alt=""></p>
+<h3 id="目标表示"><a href="#目标表示" class="headerlink" title="目标表示"></a>目标表示</h3><p>小目标：对于每一个样本点，分别求出一个分布，使得俩者分布差距最小<br><img src="/images/LR-5.png" alt=""></p>
+<p>模型目标：所有的样本差距之和最小</p>
+<p><img src="/images/LR-6.png" alt=""></p>
+<h2 id="目标函数——极大似然估计"><a href="#目标函数——极大似然估计" class="headerlink" title="目标函数——极大似然估计"></a>目标函数——极大似然估计</h2><p>同样认为对于每一个样本点都是一个P(y)的二项分布<br><img src="/images/LR-9.png" alt=""></p>
+<p>L() 代表获得到样本的概率，希望概率越大越好<br><img src="/images/LR-10.png" alt=""></p>
+<p>求对数似然<br><img src="/images/LR-6.png" alt=""></p>
+<h2 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h2><p><img src="/images/LR-11.png" alt=""></p>
+<p><img src="/images/LR-12.png" alt=""></p>
+<blockquote>
+<p>参考:</p>
+<ol>
+<li>KL散度的介绍：<a href="https://www.jianshu.com/p/43318a3dc715" target="_blank" rel="noopener">https://www.jianshu.com/p/43318a3dc715</a></li>
+<li>KL散度，交叉熵的关系；在Logistic回归中的应用</li>
+<li>邹博老师的课件</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/Logistic-Regression/" rel="tag"># Logistic Regression</a>
+          
+            <a href="/tags/交叉熵/" rel="tag"># 交叉熵</a>
+          
+            <a href="/tags/KL散度/" rel="tag"># KL散度</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/16/Linear-Regression/" rel="next" title="Linear Regression">
+                <i class="fa fa-chevron-left"></i> Linear Regression
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/picture.jpg"
+                alt="Kai Niu" />
+            
+              <p class="site-author-name" itemprop="name">Kai Niu</p>
+              <p class="site-description motion-element" itemprop="description">Hello World!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/nk2000" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型定义"><span class="nav-number">1.</span> <span class="nav-text">模型定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改进"><span class="nav-number">1.1.</span> <span class="nav-text">改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标函数——交叉熵"><span class="nav-number">2.</span> <span class="nav-text">目标函数——交叉熵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KL散度"><span class="nav-number">2.1.</span> <span class="nav-text">KL散度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KL散度与交叉熵的关系"><span class="nav-number">2.2.</span> <span class="nav-text">KL散度与交叉熵的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标表示"><span class="nav-number">2.3.</span> <span class="nav-text">目标表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标函数——极大似然估计"><span class="nav-number">3.</span> <span class="nav-text">目标函数——极大似然估计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型求解"><span class="nav-number">4.</span> <span class="nav-text">模型求解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kai Niu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'N8skWHk3GKLFdM8IIdCfVLU8-gzGzoHsz',
+        appKey: 'VqDfWPnFAAaoh8PGn5nnCMSR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
