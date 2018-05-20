@@ -478,6 +478,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -522,29 +544,34 @@
 <li>误差符合高斯分布</li>
 </ul>
 </li>
-<li>公式推导</li>
+</ul>
+<p><img src="/images/LinearR-1.png" alt=""></p>
+<ul>
+<li>公式推导<br><img src="/images/LinearR-2.png" alt=""><br><img src="/images/LinearR-3.png" alt=""></li>
 </ul>
 <p>解释了为什么损失函数是这个形式</p>
-<h2 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h2><p>对目标函数求梯度</p>
-<p>使梯度为0</p>
-<h3 id="扰动的解释："><a href="#扰动的解释：" class="headerlink" title="扰动的解释："></a>扰动的解释：</h3><p>矩阵的半正定性和正定性——解决不可逆问题</p>
-<p><strong>为什么能防过拟合？</strong></p>
-<p>加入复杂度惩罚因子</p>
-<p>LASSO：</p>
+<h2 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h2><blockquote>
+<p>意义：理论上推导出模型可解，但对矩阵求导，计算量很大，实际不采用</p>
+</blockquote>
+<p>对目标函数求梯度<br><img src="/images/LinearR-4.png" alt=""></p>
+<p>使梯度为0<br><img src="/images/LinearR-5.png" alt=""></p>
+<h3 id="为什么能添加扰动能防过拟合？"><a href="#为什么能添加扰动能防过拟合？" class="headerlink" title="为什么能添加扰动能防过拟合？"></a>为什么能添加扰动能防过拟合？</h3><p>通过实践可得，当n维特征向量映射成更高维的特征时，最后求解得到的参数值都很大，因此希望在原loss function基础上添加关于参数的项，来作为对模型复杂度的惩罚<br><img src="/images/LinearR-6.png" alt=""></p>
+<h3 id="为什么加了扰动后一定可逆？"><a href="#为什么加了扰动后一定可逆？" class="headerlink" title="为什么加了扰动后一定可逆？"></a>为什么加了扰动后一定可逆？</h3><p><img src="/images/LinearR-8.png" alt=""></p>
+<h3 id="对新的目标函数求梯度"><a href="#对新的目标函数求梯度" class="headerlink" title="对新的目标函数求梯度"></a>对新的目标函数求梯度</h3><p><img src="/images/LinearR-7.jpeg" alt=""></p>
+<h3 id="复杂度惩罚因子"><a href="#复杂度惩罚因子" class="headerlink" title="复杂度惩罚因子"></a>复杂度惩罚因子</h3><p>LASSO：</p>
 <ul>
 <li>L2-norm：性能往往不错，但没有特征选择功能</li>
 <li>L1-norm：高阶系数接近于0，相当于进行了特征选择</li>
 <li>Elastic Net：L1-norm与L2-norm融合</li>
 </ul>
 <p>感性解释：从实验出发，跑代码，当过拟合发生时，其系数很大，因此想把其系数也作为损失函数的一部分</p>
-<p>帮助理解的解释：<br>拉格朗日乘子法，推导出L1-norm的形式</p>
-<h3 id="广义逆矩阵（伪逆）"><a href="#广义逆矩阵（伪逆）" class="headerlink" title="广义逆矩阵（伪逆）"></a>广义逆矩阵（伪逆）</h3><p>意义：理论上推导出模型可解，但对矩阵求导，计算量很大，实际不采用</p>
+<p>帮助理解的解释：<br>拉格朗日乘子法，推导出L1-norm的形式<br><img src="/images/LinearR-9.jpeg" alt=""></p>
+<h3 id="广义逆矩阵（伪逆）"><a href="#广义逆矩阵（伪逆）" class="headerlink" title="广义逆矩阵（伪逆）"></a>广义逆矩阵（伪逆）</h3><p><img src="/images/LinearR-10.png" alt=""><br><img src="/images/LinearR-11.png" alt=""></p>
 <h2 id="模型优化"><a href="#模型优化" class="headerlink" title="模型优化"></a>模型优化</h2><ul>
-<li>批量梯度下降算法</li>
-<li>随机梯度下降算法：支持在线学习</li>
+<li>批量梯度下降算法<br><img src="/images/LinearR-12.png" alt=""></li>
+<li>随机梯度下降算法：支持在线学习<br><img src="/images/LinearR-13.png" alt=""></li>
 <li>mini-batch</li>
 </ul>
-<h2 id="模型验证"><a href="#模型验证" class="headerlink" title="模型验证"></a>模型验证</h2><p>数据划分</p>
 
           
         
@@ -634,6 +661,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -2035,7 +2084,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
