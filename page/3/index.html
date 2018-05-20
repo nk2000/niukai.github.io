@@ -254,6 +254,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/16/KMP时间复杂度分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/16/KMP时间复杂度分析/" itemprop="url">KMP时间复杂度分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T09:18:11+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/16/KMP时间复杂度分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/16/KMP时间复杂度分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="比较过程分析"><a href="#比较过程分析" class="headerlink" title="比较过程分析"></a>比较过程分析</h2><p><img src="/images/KMP-1.png" alt=""></p>
+<h3 id="比较次数"><a href="#比较次数" class="headerlink" title="比较次数"></a>比较次数</h3><blockquote>
+<p>比较次数： 红色 + 蓝色<br>蓝色部分是相比暴力求解，节省下的比较次数</p>
+</blockquote>
+<h3 id="周期"><a href="#周期" class="headerlink" title="周期"></a>周期</h3><p>从比较次数可以看出，呈现 1 1 1 1 5 这样的周期</p>
+<ul>
+<li>一个周期内的比较次数：8</li>
+<li>周期长度：5</li>
+<li>周期个数：n/5</li>
+<li>比较总次数： 周期个数 * 一个周期内额比较次数 = 1.8n</li>
+</ul>
+<blockquote>
+<p><strong>一般化结论：</strong></p>
+<ul>
+<li>一个周期内的比较次数：1 * (M - 1) + M</li>
+<li>周期长度：M</li>
+<li>周期个数：N/M</li>
+<li>比较总次数： 周期个数 * 一个周期内额比较次数 = (2 - 1/M)*N &lt; 2N</li>
+</ul>
+<p><strong>因此是线性</strong></p>
+</blockquote>
+<p>接下来证明，上述情况是KMP算法的最差情况</p>
+<h2 id="最差情况"><a href="#最差情况" class="headerlink" title="最差情况"></a>最差情况</h2><blockquote>
+<ol>
+<li>模式串<br>当模式串长度为M，首字符和其他字符全都相等(假定都为a)，模式串存在最长的k前缀和k后缀， next数组呈现递增样式:-1,0,1,2…</li>
+<li>需要匹配的字符串<ul>
+<li>串成周期性分布，周期为M</li>
+<li>前M-1都为a，第M位不等于a</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h3 id="模式串"><a href="#模式串" class="headerlink" title="模式串"></a>模式串</h3><p>模式串的最坏情况比较好理解，因为每次当s[i] 不等于 P[j]时，j = next[j]，一直按照next数组值进行回溯，当模式串全相等时，next数组呈现递增，每次回溯一个位子，因此比较次数是最多的</p>
+<h3 id="待匹配字符串"><a href="#待匹配字符串" class="headerlink" title="待匹配字符串"></a>待匹配字符串</h3><ol>
+<li>为什么呈现周期性的字符串满足<br>假设存在一个字符串，使得模式串匹配完，比较次数最多，那么以这个子串为基础形成的周期性字符串一定也是匹配次数最多的</li>
+<li>一个比较次数最多的子串，如何构造<br>假设不在M处失配，而是在k处就失配了，那么匹配次数为（k - 1）*1 + k,由上面的公式可以得到，当k = m时，比较次数是最多<br><img src="/images/KMP-2.png" alt=""><blockquote>
+<p>比较总次数：15 &lt; 18 </p>
+</blockquote>
+</li>
+</ol>
+<h2 id="最好情况"><a href="#最好情况" class="headerlink" title="最好情况"></a>最好情况</h2><blockquote>
+<ol>
+<li>模式串<br>当模式串的首字符和其他字符都不相等时，模式串不存在相等的k前缀和k后缀，next数组全为-1</li>
+<li>需要匹配的字符串<br>无要求</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/15/用Python玩转数据-week3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2182,217 +2379,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/week2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai Niu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/picture.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/06/week2/" itemprop="url">第二周</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T22:01:53+08:00">
-                2018-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计划/" itemprop="url" rel="index">
-                    <span itemprop="name">计划</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/06/week2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/06/week2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="周一"><a href="#周一" class="headerlink" title="周一"></a>周一</h2><ul>
-<li>邹博算法课——链表、栈、队列</li>
-<li>LeetCode<ul>
-<li>Merge k Sorted Lists</li>
-<li>Merge Two Sorted Lists</li>
-</ul>
-</li>
-<li>deeplearning.ai week1</li>
-</ul>
-<h2 id="周二"><a href="#周二" class="headerlink" title="周二"></a>周二</h2><ul>
-<li>用Python玩转数据 week1</li>
-<li>LeetCode<ul>
-<li>Pow(x, n)</li>
-<li>Add Two Numbers</li>
-<li>Median of Two Sorted Arrays</li>
-</ul>
-</li>
-<li>Hexo<ul>
-<li>代码语法高亮</li>
-<li>代码块折叠</li>
-</ul>
-</li>
-</ul>
-<h2 id="周三"><a href="#周三" class="headerlink" title="周三"></a>周三</h2><ul>
-<li>用Python玩转数据 week2</li>
-<li>LeetCode<ul>
-<li>Remove Duplicates from Sorted List II</li>
-<li>Remove Duplicates from Sorted List</li>
-<li>Swap Nodes in Pairs</li>
-<li>Remove Nth Node From End of List</li>
-<li>Reverse Nodes in k-Group</li>
-</ul>
-</li>
-<li>配置git</li>
-<li>博客</li>
-</ul>
-<h2 id="周四"><a href="#周四" class="headerlink" title="周四"></a>周四</h2><ul>
-<li>MLDS第二次课：2.5h</li>
-<li>LeetCode<ul>
-<li>20 Valid Parentheses    </li>
-<li>92 Reverse Linked List II</li>
-<li>86 Partition List</li>
-</ul>
-</li>
-</ul>
-<h2 id="周五"><a href="#周五" class="headerlink" title="周五"></a>周五</h2><ul>
-<li>机器学习——林轩田</li>
-<li>LeetCode: 这俩题刷新了我对栈的认知，但仔细思考之后，收获良多<ul>
-<li>84 Largest Rectangle in Histogram</li>
-<li>42 Trapping Rain Water</li>
-</ul>
-</li>
-</ul>
-<h2 id="周六"><a href="#周六" class="headerlink" title="周六"></a>周六</h2><ul>
-<li>博客： 三篇题解</li>
-<li>LeetCode<ul>
-<li>32 Longest Valid Parentheses</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2447,7 +2433,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2469,7 +2455,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
