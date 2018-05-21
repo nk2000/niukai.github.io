@@ -81,22 +81,28 @@
 
 
 
-<meta name="description" content="回顾 决策树的分类能力由叶子节点上的条件概率分布决定 决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点  思考： 提升的定义 提升的框架思路：在构建好的k-1颗决策树的基础上，构建第k颗决策树  首先，给定常函数F0(x):并且由之前关于cost function中的讨论，F0(X)总是可求的 以贪心的思路扩展得到Fm(x):">
+<meta name="description" content="回顾 决策树的分类能力由叶子节点上的条件概率分布决定 决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点  思考： 提升的定义 提升的框架 思路：在构建好的k-1棵决策树的基础上，构建第k棵决策树  符号说明： 这里需要解释一下俩棵决策树的加权和的含义权值a1,a2取值不同，首先决定了不同的特征空间的划分，统计后得到不同的条件概率，是一棵抽象的树结构  首先，给定常函">
 <meta name="keywords" content="机器学习,邹博,提升">
 <meta property="og:type" content="article">
 <meta property="og:title" content="提升（一）">
 <meta property="og:url" content="http://yoursite.com/2018/05/21/提升（一）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="回顾 决策树的分类能力由叶子节点上的条件概率分布决定 决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点  思考： 提升的定义 提升的框架思路：在构建好的k-1颗决策树的基础上，构建第k颗决策树  首先，给定常函数F0(x):并且由之前关于cost function中的讨论，F0(X)总是可求的 以贪心的思路扩展得到Fm(x):">
+<meta property="og:description" content="回顾 决策树的分类能力由叶子节点上的条件概率分布决定 决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点  思考： 提升的定义 提升的框架 思路：在构建好的k-1棵决策树的基础上，构建第k棵决策树  符号说明： 这里需要解释一下俩棵决策树的加权和的含义权值a1,a2取值不同，首先决定了不同的特征空间的划分，统计后得到不同的条件概率，是一棵抽象的树结构  首先，给定常函">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/boosting-2.png">
 <meta property="og:image" content="http://yoursite.com/images/boosting-1.png">
+<meta property="og:image" content="http://yoursite.com/images/boosting-5.png">
+<meta property="og:image" content="http://yoursite.com/images/boosting-6.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/boosting-3.png">
 <meta property="og:image" content="http://yoursite.com/images/boosting-4.png">
-<meta property="og:updated_time" content="2018-05-21T03:03:17.424Z">
+<meta property="og:image" content="http://yoursite.com/images/boosting-7.png">
+<meta property="og:image" content="http://yoursite.com/images/boosting-8.png">
+<meta property="og:image" content="http://yoursite.com/images/boosting-9.png">
+<meta property="og:image" content="http://yoursite.com/images/boosting-10.png">
+<meta property="og:updated_time" content="2018-05-21T05:42:51.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="提升（一）">
-<meta name="twitter:description" content="回顾 决策树的分类能力由叶子节点上的条件概率分布决定 决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点  思考： 提升的定义 提升的框架思路：在构建好的k-1颗决策树的基础上，构建第k颗决策树  首先，给定常函数F0(x):并且由之前关于cost function中的讨论，F0(X)总是可求的 以贪心的思路扩展得到Fm(x):">
+<meta name="twitter:description" content="回顾 决策树的分类能力由叶子节点上的条件概率分布决定 决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点  思考： 提升的定义 提升的框架 思路：在构建好的k-1棵决策树的基础上，构建第k棵决策树  符号说明： 这里需要解释一下俩棵决策树的加权和的含义权值a1,a2取值不同，首先决定了不同的特征空间的划分，统计后得到不同的条件概率，是一棵抽象的树结构  首先，给定常函">
 <meta name="twitter:image" content="http://yoursite.com/images/boosting-2.png">
 
 
@@ -365,11 +371,17 @@
 </ol>
 <p>思考：<br><img src="/images/boosting-2.png" alt=""></p>
 <h2 id="提升的定义"><a href="#提升的定义" class="headerlink" title="提升的定义"></a>提升的定义</h2><p><img src="/images/boosting-1.png" alt=""></p>
-<h2 id="提升的框架"><a href="#提升的框架" class="headerlink" title="提升的框架"></a>提升的框架</h2><p>思路：在构建好的k-1颗决策树的基础上，构建第k颗决策树</p>
+<h2 id="提升的框架"><a href="#提升的框架" class="headerlink" title="提升的框架"></a>提升的框架</h2><blockquote>
+<p>思路：在构建好的k-1棵决策树的基础上，构建第k棵决策树</p>
+</blockquote>
+<p>符号说明：<br><img src="/images/boosting-5.png" alt=""></p>
+<p>这里需要解释一下俩棵决策树的加权和的含义<br><img src="/images/boosting-6.jpeg" alt=""><br>权值a1,a2取值不同，首先决定了不同的特征空间的划分，统计后得到不同的条件概率，是一棵抽象的树结构</p>
 <ol>
-<li>首先，给定常函数F0(x):<br><img src="/images/boosting-3.png" alt=""><br>并且由之前关于<a href="">cost function</a>中的讨论，F0(X)总是可求的</li>
+<li>首先，给定常函数F0(x):<br><img src="/images/boosting-3.png" alt=""><br>并且由之前关于<a href="https://nk2000.github.io/2018/05/21/cost-function/" target="_blank" rel="noopener">cost function</a>中的讨论，F0(X)总是可求的</li>
 <li>以贪心的思路扩展得到Fm(x):<br><img src="/images/boosting-4.png" alt=""></li>
 </ol>
+<h2 id="目标函数的计算"><a href="#目标函数的计算" class="headerlink" title="目标函数的计算"></a>目标函数的计算</h2><p><img src="/images/boosting-7.png" alt=""><br><img src="/images/boosting-8.png" alt=""><br>这里的所谓权值w就是P(Y|X)的条件分布<br><img src="/images/boosting-9.png" alt=""></p>
+<h2 id="模型构建"><a href="#模型构建" class="headerlink" title="模型构建"></a>模型构建</h2><p><img src="/images/boosting-10.png" alt=""></p>
 
       
     </div>
@@ -565,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提升的定义"><span class="nav-number">2.</span> <span class="nav-text">提升的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提升的框架"><span class="nav-number">3.</span> <span class="nav-text">提升的框架</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#回顾"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提升的定义"><span class="nav-number">2.</span> <span class="nav-text">提升的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提升的框架"><span class="nav-number">3.</span> <span class="nav-text">提升的框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标函数的计算"><span class="nav-number">4.</span> <span class="nav-text">目标函数的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型构建"><span class="nav-number">5.</span> <span class="nav-text">模型构建</span></a></li></ol></div>
             
 
           </div>
