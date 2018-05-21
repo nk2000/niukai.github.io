@@ -254,6 +254,657 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/cost-function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/cost-function/" itemprop="url">cost function</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T10:22:06+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/21/cost-function/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/21/cost-function/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="cost-function的形式"><a href="#cost-function的形式" class="headerlink" title="cost function的形式"></a>cost function的形式</h2><p>cost function的推导满足以下过程：</p>
+<ol>
+<li>认为error 满足某个分布，写出样本点xi的样本的error</li>
+<li>认为样本点是相互独立的，推导出其对数似然函数</li>
+<li>求偏导，是得导函数为0，分离常数部分，得到误差的表达形式</li>
+</ol>
+<p>e.g.<br>线性回归中关于MSE的推导：<a href="https://nk2000.github.io/2018/05/16/Linear-Regression/" target="_blank" rel="noopener">https://nk2000.github.io/2018/05/16/Linear-Regression/</a></p>
+<h2 id="常见的cost-function"><a href="#常见的cost-function" class="headerlink" title="常见的cost function"></a>常见的cost function</h2><p><img src="/images/cost function-1.png" alt=""></p>
+<h2 id="均值和中位数的意义"><a href="#均值和中位数的意义" class="headerlink" title="均值和中位数的意义"></a>均值和中位数的意义</h2><p>在这样的框架下，假设fx是一个常函数，即fx=c</p>
+<h3 id="假设cost-function-符合高斯分布时："><a href="#假设cost-function-符合高斯分布时：" class="headerlink" title="假设cost function 符合高斯分布时："></a>假设cost function 符合高斯分布时：</h3><p><img src="/images/cost function-2.jpeg" alt=""></p>
+<p>样本的均值就是最好的模型</p>
+<h3 id="假设cost-function-符合Laplace分布："><a href="#假设cost-function-符合Laplace分布：" class="headerlink" title="假设cost function 符合Laplace分布："></a>假设cost function 符合Laplace分布：</h3><p><img src="/images/cost function-3.png" alt=""></p>
+<p>中位数就是最好的模型</p>
+<p><strong>因此当给定损失函数形式的情况下，一个常函数的模型总是可求的</strong></p>
+<blockquote>
+<p>参考：</p>
+<ol>
+<li>邹博博士课件</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/提升（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/提升（一）/" itemprop="url">提升（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T10:16:22+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/21/提升（一）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/21/提升（一）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><ol>
+<li>决策树的分类能力由叶子节点上的条件概率分布决定</li>
+<li>决策树的内路径只决定了特征空间的划分情况，即给定一个样本xi，最终会落在哪个节点</li>
+</ol>
+<p>思考：<br><img src="/images/boosting-2.png" alt=""></p>
+<h2 id="提升的定义"><a href="#提升的定义" class="headerlink" title="提升的定义"></a>提升的定义</h2><p><img src="/images/boosting-1.png" alt=""></p>
+<h2 id="提升的框架"><a href="#提升的框架" class="headerlink" title="提升的框架"></a>提升的框架</h2><p>思路：在构建好的k-1颗决策树的基础上，构建第k颗决策树</p>
+<ol>
+<li>首先，给定常函数F0(x):<br><img src="/images/boosting-3.png" alt=""><br>并且由之前关于<a href="">cost function</a>中的讨论，F0(X)总是可求的</li>
+<li>以贪心的思路扩展得到Fm(x):<br><img src="/images/boosting-4.png" alt=""></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/AUC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/AUC/" itemprop="url">AUC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T07:03:34+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/21/AUC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/21/AUC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="AUC定义"><a href="#AUC定义" class="headerlink" title="AUC定义"></a>AUC定义</h2><p><img src="/images/AUC-1.png" alt=""></p>
+<p>Note:</p>
+<ol>
+<li>图像一定过（0，0），（1，1）<br>当阈值趋于正无穷时<br><img src="/images/AUC-4.png" alt=""><br>TPR = 1; FPR =  1</li>
+<li>图像一定是上凸的</li>
+<li>equal error rate曲线所围成的面积越大，代表着模型越好<br>当预测越准确时，TPR，FPR都接近1，故面积大</li>
+</ol>
+<h2 id="AUC实例"><a href="#AUC实例" class="headerlink" title="AUC实例"></a>AUC实例</h2><p><img src="/images/AUC-2.png" alt=""><br>阈值的取值不同，AUC的图像也不同，在此例中，0.1，0.3，0.5，0.8把数轴划分成了5个区域，每个区域中的AUC取值是相同的，不同的区域，AUC取值不同，分别对应着图中的五个点<br><img src="/images/AUC-3.png" alt=""><br>之前的图是对应着4个样本点的情况，故有很明显的折线，当样本点个数增多时，AUC的效果会趋于上图</p>
+<p>Note：<br>感觉还是没懂，待续…</p>
+<blockquote>
+<p>参考</p>
+<ol>
+<li>邹博博士课件</li>
+<li><a href="http://alexkong.net/2013/06/introduction-to-auc-and-roc/" target="_blank" rel="noopener">http://alexkong.net/2013/06/introduction-to-auc-and-roc/</a></li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/不均衡样本处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kai Niu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/不均衡样本处理/" itemprop="url">不均衡样本处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T06:58:29+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/21/不均衡样本处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/21/不均衡样本处理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/决策树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1286,759 +1937,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Instance-based-learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai Niu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/picture.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/Instance-based-learning/" itemprop="url">Instance based learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T20:04:01+08:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/05/Instance-based-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/Instance-based-learning/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Neural-Network/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai Niu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/picture.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/Neural-Network/" itemprop="url">Neural Network</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T16:58:56+08:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/05/Neural-Network/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/Neural-Network/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h2><h2 id="How-powerful-is-a-perception？（Expressiveness（and，or，not，xor））"><a href="#How-powerful-is-a-perception？（Expressiveness（and，or，not，xor））" class="headerlink" title="How powerful is a perception？（Expressiveness（and，or，not，xor））"></a>How powerful is a perception？（Expressiveness（and，or，not，xor））</h2><ol>
-<li>and</li>
-</ol>
-<ol>
-<li><p>or</p>
-</li>
-<li><p>not</p>
-</li>
-</ol>
-<p>represent anything：可以表达由and，or，not组合成的任意逻辑表达式</p>
-<p>e.g. XOR</p>
-<p>结论：</p>
-<ol>
-<li>感知机是线性的</li>
-<li>perceptron can represent anything：可以表达由and，or，not组合成的任意逻辑表达式</li>
-</ol>
-<h2 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h2><ol>
-<li>perceptron rule：how to set a single unit</li>
-</ol>
-<p>trick：添加W(0)，并设为1，用来表示 threshold value<br>是否线性可分：如果线性可分，该算法最终为经过有限次迭代后停止</p>
-<ol>
-<li><p>Non-linear separability：Gradient descent<br>为什么前面有1/2：求导时，便于消去</p>
-</li>
-<li><p>比较<br>唯一的区别：是否阈值化</p>
-</li>
-</ol>
-<p>Note：</p>
-<ol>
-<li>梯度下降不直接用y’的原因是，阈值化后，函数不连续</li>
-<li><p>引出可以使用safter threshold 的连续函数——sigmoid function</p>
-</li>
-<li><p>sigmoid</p>
-</li>
-</ol>
-<p>Note：这个函数不是唯一的，只是其中的一种，可以近似阈值待定问题的连续函数</p>
-<h2 id="Neural-Network"><a href="#Neural-Network" class="headerlink" title="Neural Network"></a>Neural Network</h2><p>Note：</p>
-<ul>
-<li>whole thing is differentiable：<ul>
-<li>对于任何一个中间节点，在给定值得情况下，我们知道稍微增加或减少该节点值对输出有什么影响</li>
-<li>我们可以调整所有权值，进而使输出与预期更加一致</li>
-</ul>
-</li>
-<li>使用别的连续函数代替sigmoid函数，该模型仍成立</li>
-<li>Backpropagation：误差的反向传播</li>
-<li>与perceptron不同，如果问题线性可分，最终会停下来，得到最优解；梯度下降存在很多局部最优解</li>
-</ul>
-<h2 id="advanced-optimize-methods"><a href="#advanced-optimize-methods" class="headerlink" title="advanced optimize methods"></a>advanced optimize methods</h2><p>Note:</p>
-<ul>
-<li>complexity<ul>
-<li>Decision Tree：树的深度</li>
-<li>Regression：多项式的阶数</li>
-<li>Neural Network<ul>
-<li>#nodes</li>
-<li>#layers</li>
-<li>参数的权重<h2 id="Bias"><a href="#Bias" class="headerlink" title="Bias"></a>Bias</h2>Restriction bias：representational power——set of hypothesis we will consider</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>能表示任意函数：</p>
-<ul>
-<li>代表着可以表达任何问题，包括训练集中包含的所有噪音</li>
-<li>很容易发生overfiting<ul>
-<li>在给定节点个数和层数的情况下，hypothesis set 的大小是有限</li>
-<li>cross validation能帮助我们确定节点个数，层数，权重大小</li>
-</ul>
-</li>
-</ul>
-<p>Note：在固定节点个数，层数，权重大小的情况下，随着迭代次数的增加，测试集误差会增加，这反映了神经网络的模型复杂度不仅仅由这三个因素所决定（这是与其他算法不同的地方）</p>
-<p>Preference bias：</p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/Decision-Tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai Niu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/picture.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/05/Decision-Tree/" itemprop="url">Decision Tree</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T15:46:50+08:00">
-                2018-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/机器学习/" itemprop="url" rel="index">
-                    <span itemprop="name">机器学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/05/Decision-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/05/Decision-Tree/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Representation"><a href="#Representation" class="headerlink" title="Representation"></a>Representation</h2><p><img src="/images/Decision Tree-1.png" alt=""></p>
-<h2 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h2><p><img src="/images/Decision Tree-2.png" alt=""></p>
-<h2 id="Expressiveness（and，or，xor）"><a href="#Expressiveness（and，or，xor）" class="headerlink" title="Expressiveness（and，or，xor）"></a>Expressiveness（and，or，xor）</h2><p><img src="/images/Decision Tree-3.png" alt=""></p>
-<h2 id="size-of-hypothesis-set"><a href="#size-of-hypothesis-set" class="headerlink" title="size of hypothesis set"></a>size of hypothesis set</h2><p><img src="/images/Decision Tree-4.png" alt=""><br>结论：</p>
-<ul>
-<li>hypothesis space is very expressive because there’s lots of different functions that you can represent</li>
-<li>should have some clever way to search among them</li>
-</ul>
-<h2 id="Learning-Algorithm"><a href="#Learning-Algorithm" class="headerlink" title="Learning Algorithm"></a>Learning Algorithm</h2><p><img src="/images/Decision Tree-5.png" alt=""><br>熵（直观认识）：measure of information，randomness</p>
-<p>P(A) = 1 ：no information，no randomness，no entropy(entropy = 0)</p>
-<p>均匀划分时：它们的熵会是最大的</p>
-<p>在此不进行展开，将在randomize optimization 中详细介绍</p>
-<p>e.g.</p>
-<p><img src="/images/Decision Tree-6.png" alt=""><br>图一图二的entropy没有改变</p>
-<p>图三中俩个子集的entropy都减小了，在该例子中，减为0<br>相应的，它的信息熵的增量是最大的</p>
-<h2 id="bias"><a href="#bias" class="headerlink" title="bias"></a>bias</h2><p>hypothesis set： all possible decision tree</p>
-<p>two kind of biases</p>
-<ul>
-<li>Restriction bias：H</li>
-<li>Preference bias：<ul>
-<li>what source of hypothesis from this hypothesis set we prefer</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/Decision Tree-7.png" alt=""></p>
-<h2 id="Other-considerations"><a href="#Other-considerations" class="headerlink" title="Other considerations"></a>Other considerations</h2><p><img src="/images/Decision Tree-8.png" alt=""></p>
-<p>对于存在的噪音该如何处理？</p>
-<p>overfitting</p>
-<ul>
-<li>pruning</li>
-</ul>
-<p><img src="/images/Decision Tree-9.png" alt=""><br>对离散型特征：没有意义<br>对连续型特征：</p>
-<ul>
-<li>不同的问题（范围）：有意义</li>
-</ul>
-<p><img src="/images/Decision Tree-10.png" alt=""></p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p><img src="/images/Decision Tree-11.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/process-5-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kai Niu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/picture.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/02/process-5-2/" itemprop="url">process_5.2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T10:54:20+08:00">
-                2018-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计划/" itemprop="url" rel="index">
-                    <span itemprop="name">计划</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/02/process-5-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/02/process-5-2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/images/Processing——5.2.png" alt=""></p>
-<p>5.2</p>
-<ul>
-<li>线性代数<ul>
-<li>微分方程</li>
-<li>马尔科夫矩阵</li>
-</ul>
-</li>
-<li>算法<ul>
-<li>图论——搜索<br>5.3</li>
-</ul>
-</li>
-<li>线性代数<ul>
-<li>正定矩阵</li>
-<li>相似矩阵<br>5.4</li>
-</ul>
-</li>
-<li>线性代数<ul>
-<li>SVD</li>
-</ul>
-</li>
-<li>算法实现<ul>
-<li>割点</li>
-<li>并查集</li>
-<li>BFS</li>
-</ul>
-</li>
-<li>算法<ul>
-<li>杨氏矩阵<ul>
-<li>插入</li>
-<li>查找</li>
-</ul>
-</li>
-<li>进程调度<br>5.5</li>
-</ul>
-</li>
-<li>机器学习<ul>
-<li>Decision Tree</li>
-<li>Neural Network</li>
-</ul>
-</li>
-<li>博客整理：2篇</li>
-</ul>
-<p>5.7</p>
-<ul>
-<li>机器学习<ul>
-<li>回归，邹博<br>5.8</li>
-</ul>
-</li>
-<li>机器学习<ul>
-<li>Logistic Regression，邹博<br>5.9</li>
-</ul>
-</li>
-<li>机器学习<ul>
-<li>决策树<br>5.10</li>
-</ul>
-</li>
-<li>机器学习<ul>
-<li>提升，邹博</li>
-<li>Deep Learning-week2</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2093,7 +1991,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2115,7 +2013,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
